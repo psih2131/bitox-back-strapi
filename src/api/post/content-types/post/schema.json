@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog",
+  "info": {
+    "singularName": "post",
+    "pluralName": "blog",
+    "displayName": "blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post_title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 255,
+      "required": true
+    },
+    "post_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "post_content_builder": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.quote-text",
+        "shared.text-editor"
+      ]
+    },
+    "post_questions_section": {
+      "type": "component",
+      "component": "shared.post-questions",
+      "repeatable": false
+    }
+  }
+}

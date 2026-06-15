@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_post_contet_builders",
+  "info": {
+    "displayName": "post_contet_builder",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "text_editor": {
+      "type": "richtext"
+    },
+    "quote": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

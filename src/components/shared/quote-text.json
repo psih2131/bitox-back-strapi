@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_quote_texts",
+  "info": {
+    "displayName": "quote_text"
+  },
+  "options": {},
+  "attributes": {
+    "id_for_section": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "section_title_for_nav_post_menu": {
+      "type": "string",
+      "required": true
+    },
+    "quote_text_element": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_text_editors",
+  "info": {
+    "displayName": "text_editor"
+  },
+  "options": {},
+  "attributes": {
+    "id_for_section": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "section_title_for_nav_post_menu": {
+      "type": "string"
+    },
+    "text_editor": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

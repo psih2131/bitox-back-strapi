@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_post_questions",
+  "info": {
+    "displayName": "post_questions"
+  },
+  "options": {},
+  "attributes": {
+    "title_section": {
+      "type": "string"
+    },
+    "post_questions": {
+      "type": "component",
+      "component": "shared.question",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
