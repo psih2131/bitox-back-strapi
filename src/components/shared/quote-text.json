@@ -8,7 +8,7 @@
     "id_for_section": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "section_title_for_nav_post_menu": {
       "type": "string",

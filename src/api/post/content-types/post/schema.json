@@ -17,6 +17,20 @@
       "maxLength": 255,
       "required": true
     },
+    "post_description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "post_title",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "blogs"
+    },
     "post_image": {
       "type": "media",
       "multiple": false,
@@ -36,6 +50,21 @@
       "type": "component",
       "component": "shared.post-questions",
       "repeatable": false
+    },
+    "seo_cluster": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "time_read_post": {
+      "type": "string",
+      "default": "5"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "blogs"
     }
   }
 }

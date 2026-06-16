@@ -19,16 +19,26 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     },
     "email": {
       "type": "string"
     },
-    "articles": {
+    "blogs": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article.article",
+      "target": "api::post.post",
       "mappedBy": "author"
+    },
+    "about_autor": {
+      "type": "string"
+    },
+    "verified_author": {
+      "type": "boolean"
     }
   }
 }

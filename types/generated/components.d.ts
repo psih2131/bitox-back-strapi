@@ -78,9 +78,7 @@ export interface SharedQuoteText extends Struct.ComponentSchema {
     displayName: 'quote_text';
   };
   attributes: {
-    id_for_section: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    id_for_section: Schema.Attribute.String & Schema.Attribute.Required;
     quote_text_element: Schema.Attribute.Text;
     section_title_for_nav_post_menu: Schema.Attribute.String &
       Schema.Attribute.Required;
@@ -130,9 +128,7 @@ export interface SharedTextEditor extends Struct.ComponentSchema {
     displayName: 'text_editor';
   };
   attributes: {
-    id_for_section: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    id_for_section: Schema.Attribute.String & Schema.Attribute.Required;
     section_title_for_nav_post_menu: Schema.Attribute.String;
     text_editor: Schema.Attribute.RichText;
   };
