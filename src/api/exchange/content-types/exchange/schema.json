@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "exchanges",
+  "info": {
+    "singularName": "exchange",
+    "pluralName": "exchanges",
+    "displayName": "Exchange"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "exchange_hero_sec": {
+      "type": "component",
+      "component": "shared.exchange-hero-sec",
+      "repeatable": false
+    },
+    "exchange_stats_sec": {
+      "type": "component",
+      "component": "shared.stats-sec",
+      "repeatable": false
+    },
+    "exchange_client_use_sec": {
+      "type": "component",
+      "component": "shared.clients-use",
+      "repeatable": false
+    },
+    "exchange_sec_staps": {
+      "type": "component",
+      "component": "shared.exchange-staps-sec",
+      "repeatable": false
+    },
+    "exchange_faq_sec": {
+      "type": "component",
+      "component": "shared.faq-sec",
+      "repeatable": false
+    },
+    "exhange_seo_sec": {
+      "type": "component",
+      "component": "shared.seo-sec",
+      "repeatable": true
+    },
+    "Seo_cluster": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": true
+    }
+  }
+}

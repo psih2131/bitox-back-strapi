@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_benefits_secs",
+  "info": {
+    "displayName": "benefits_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title_section": {
+      "type": "string"
+    },
+    "benefits_items": {
+      "type": "component",
+      "component": "shared.benefit-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

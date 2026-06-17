@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_countries_secs",
+  "info": {
+    "displayName": "countries_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Международные платежи по всему миру"
+    },
+    "button_title": {
+      "type": "string",
+      "default": "Узнать как сэкономить на платеже"
+    },
+    "countries_list": {
+      "type": "component",
+      "component": "shared.state-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

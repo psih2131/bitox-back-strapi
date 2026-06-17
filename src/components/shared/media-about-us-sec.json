@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_media_about_us_secs",
+  "info": {
+    "displayName": " media_about_us_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "СМИ о нас"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Публикации о bitox"
+    },
+    "posts": {
+      "type": "component",
+      "component": "shared.media-about-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

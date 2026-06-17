@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_about_gallery_secs",
+  "info": {
+    "displayName": "about_gallery_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "img_gallery": {
+      "type": "component",
+      "component": "shared.images-gallery",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

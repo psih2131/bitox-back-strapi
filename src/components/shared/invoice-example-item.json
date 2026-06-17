@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_shared_invoice_example_items",
+  "info": {
+    "displayName": "Invoice_example_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date"
+    },
+    "client": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string",
+      "default": "75 000 EUR"
+    },
+    "time": {
+      "type": "string",
+      "default": "4 рабочих дня"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "full_description": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_about_hero_secs",
+  "info": {
+    "displayName": "about_hero_sec"
+  },
+  "options": {},
+  "attributes": {
+    "section_title": {
+      "type": "string"
+    },
+    "box_list_element": {
+      "type": "component",
+      "component": "shared.about-hero-box-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

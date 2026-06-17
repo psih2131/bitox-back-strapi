@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_economy_secs",
+  "info": {
+    "displayName": "economy-sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "button_title_yellow": {
+      "type": "string"
+    },
+    "button_title_white": {
+      "type": "string"
+    },
+    "economy_list_items": {
+      "type": "component",
+      "component": "shared.economy-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

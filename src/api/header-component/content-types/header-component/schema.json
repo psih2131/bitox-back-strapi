@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "header_components",
+  "info": {
+    "singularName": "header-component",
+    "pluralName": "header-components",
+    "displayName": "_header_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "string",
+      "default": "109544, город Москва, Школьная ул, д. 47"
+    },
+    "time_work": {
+      "type": "string",
+      "default": "9:00-20:00, Пн-Вс"
+    },
+    "header_contacts_list": {
+      "type": "component",
+      "component": "shared.header-contacts",
+      "repeatable": true,
+      "max": 3
+    },
+    "call_btn_text": {
+      "type": "string",
+      "default": "Позвоните мне",
+      "required": false
+    },
+    "text_logo": {
+      "type": "string",
+      "default": "Bitox",
+      "required": true
+    },
+    "ctr_button_text": {
+      "type": "string",
+      "default": "Консультация",
+      "required": true
+    }
+  }
+}

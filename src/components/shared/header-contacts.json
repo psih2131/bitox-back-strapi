@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_header_contacts",
+  "info": {
+    "displayName": "header_contacts"
+  },
+  "options": {},
+  "attributes": {
+    "svg_icon": {
+      "type": "text"
+    },
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

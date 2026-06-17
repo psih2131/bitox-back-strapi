@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_ctr_sec_v1s",
+  "info": {
+    "displayName": "ctr_sec_v1"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "button_text_yellow": {
+      "type": "string"
+    },
+    "button_text_white": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_exchange_staps_secs",
+  "info": {
+    "displayName": "exchange_staps_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title_sec": {
+      "type": "string"
+    },
+    "subtitle_sec": {
+      "type": "string"
+    },
+    "staps_elements": {
+      "type": "component",
+      "component": "shared.exchange-staps-element",
+      "repeatable": true
+    },
+    "exchange_media_about_us": {
+      "type": "component",
+      "component": "shared.media-about-us-sec",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

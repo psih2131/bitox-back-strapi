@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_invoice_element_lists",
+  "info": {
+    "displayName": "invoice_element_list"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

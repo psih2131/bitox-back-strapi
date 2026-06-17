@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_invoice_elements",
+  "info": {
+    "displayName": "invoice_element"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "invoice_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "invoice_element_list_items": {
+      "type": "component",
+      "component": "shared.invoice-element-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

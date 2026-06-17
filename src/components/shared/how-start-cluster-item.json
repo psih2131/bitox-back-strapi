@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_how_start_cluster_items",
+  "info": {
+    "displayName": "How_start_cluster_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

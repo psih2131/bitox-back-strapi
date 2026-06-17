@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_seo_secs",
+  "info": {
+    "displayName": "seo_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

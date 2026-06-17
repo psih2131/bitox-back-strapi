@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_exchange_staps_elements",
+  "info": {
+    "displayName": "Exchange_staps_element"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

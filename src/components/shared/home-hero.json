@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_home_heroes",
+  "info": {
+    "displayName": "home_hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "title_short_text_1": {
+      "type": "string"
+    },
+    "title_short_text_2": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "home_hero_card_items": {
+      "type": "component",
+      "component": "shared.home-hero-card-item",
+      "repeatable": true
+    },
+    "total_amount_today": {
+      "type": "string",
+      "default": "2.000.000 $"
+    }
+  },
+  "config": {}
+}

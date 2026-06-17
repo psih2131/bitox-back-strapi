@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_stats_secs",
+  "info": {
+    "displayName": "stats_sec"
+  },
+  "options": {},
+  "attributes": {
+    "stats_element": {
+      "type": "component",
+      "component": "shared.stats-element",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

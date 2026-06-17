@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_contacts_hero_secs",
+  "info": {
+    "displayName": "contacts_hero_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "telegram_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "telegram_title": {
+      "type": "string"
+    },
+    "telegram_subtitle": {
+      "type": "string"
+    },
+    "telegram_subtitle_2": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

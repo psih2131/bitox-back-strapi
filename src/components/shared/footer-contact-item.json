@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_footer_contact_items",
+  "info": {
+    "displayName": "footer__contact_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

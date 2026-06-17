@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_exchange_hero_secs",
+  "info": {
+    "displayName": "exchange_hero_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "image_section": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

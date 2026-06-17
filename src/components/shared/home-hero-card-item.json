@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_home_hero_card_items",
+  "info": {
+    "displayName": "home_hero_card_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

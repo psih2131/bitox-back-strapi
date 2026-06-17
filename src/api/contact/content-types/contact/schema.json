@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contacts_hero_sec": {
+      "type": "component",
+      "component": "shared.contacts-hero-sec",
+      "repeatable": false
+    },
+    "contacts_map_sec": {
+      "type": "component",
+      "component": "shared.contacts-sec",
+      "repeatable": false
+    },
+    "contact_offices_sec": {
+      "type": "component",
+      "component": "shared.offices-sec",
+      "repeatable": false
+    }
+  }
+}

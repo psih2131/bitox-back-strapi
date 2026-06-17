@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "partnerships",
+  "info": {
+    "singularName": "partnership",
+    "pluralName": "partnerships",
+    "displayName": "Partnership"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partnership_hero_sec": {
+      "type": "component",
+      "component": "shared.partnership-hero",
+      "repeatable": false
+    },
+    "partnership_offer_section": {
+      "type": "component",
+      "component": "shared.partnership-offer",
+      "repeatable": false
+    },
+    "partnership_how_be_partner_sec": {
+      "type": "component",
+      "component": "shared.how-be-partners",
+      "repeatable": false
+    },
+    "partnership_faq_sec": {
+      "type": "component",
+      "component": "shared.faq-sec",
+      "repeatable": false
+    },
+    "seo_cluster": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

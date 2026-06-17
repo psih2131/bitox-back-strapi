@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_offices_secs",
+  "info": {
+    "displayName": "offices_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title_sec": {
+      "type": "string"
+    },
+    "offices_map_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "offices_list": {
+      "type": "component",
+      "component": "shared.office-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

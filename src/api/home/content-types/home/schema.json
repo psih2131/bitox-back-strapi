@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "home_hero_sec": {
+      "type": "component",
+      "component": "shared.home-hero",
+      "repeatable": false
+    },
+    "home_stats_sec": {
+      "type": "component",
+      "component": "shared.stats-sec",
+      "repeatable": false
+    },
+    "home_offers_banners_sec": {
+      "type": "component",
+      "component": "shared.offers-banner-sec",
+      "repeatable": false
+    },
+    "home_countries_sec": {
+      "type": "component",
+      "component": "shared.countries-sec",
+      "repeatable": false
+    },
+    "home_benefits_sec": {
+      "type": "component",
+      "component": "shared.benefits-sec",
+      "repeatable": false
+    },
+    "home_media_about_us": {
+      "type": "component",
+      "component": "shared.media-about-us-sec",
+      "repeatable": false
+    },
+    "home_team_sec": {
+      "type": "component",
+      "component": "shared.team-sec",
+      "repeatable": false
+    },
+    "home_how_start_sec": {
+      "type": "component",
+      "component": "shared.how-start-sec",
+      "repeatable": false
+    },
+    "home_faq_sec": {
+      "type": "component",
+      "component": "shared.faq-sec",
+      "repeatable": false
+    },
+    "home_down_ctr_v1_sec": {
+      "type": "component",
+      "component": "shared.ctr-sec-v1",
+      "repeatable": false
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

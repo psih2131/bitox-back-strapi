@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "docs_pages",
+  "info": {
+    "singularName": "docs-page",
+    "pluralName": "docs-pages",
+    "displayName": "Docs_pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "text_editor": {
+      "type": "richtext"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

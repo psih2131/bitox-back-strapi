@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_team_secs",
+  "info": {
+    "displayName": "team_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

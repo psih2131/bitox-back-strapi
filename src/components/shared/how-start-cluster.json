@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_how_start_clusters",
+  "info": {
+    "displayName": "How_start_cluster"
+  },
+  "options": {},
+  "attributes": {
+    "title_cluster": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.how-start-cluster-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

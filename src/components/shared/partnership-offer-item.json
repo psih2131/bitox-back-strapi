@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_partnership_offer_items",
+  "info": {
+    "displayName": "partnership_offer_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

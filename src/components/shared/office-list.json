@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_office_lists",
+  "info": {
+    "displayName": "office_list"
+  },
+  "options": {},
+  "attributes": {
+    "name_office": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

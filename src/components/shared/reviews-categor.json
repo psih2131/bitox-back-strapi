@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_reviews_categors",
+  "info": {
+    "displayName": "reviews_categor"
+  },
+  "options": {},
+  "attributes": {
+    "category_name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

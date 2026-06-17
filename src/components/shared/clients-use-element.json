@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_clients_use_elements",
+  "info": {
+    "displayName": "clients_use_element"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

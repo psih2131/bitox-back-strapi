@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_about_about_secs",
+  "info": {
+    "displayName": "about_about_sec"
+  },
+  "options": {},
+  "attributes": {
+    "section_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "section_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

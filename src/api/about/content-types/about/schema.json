@@ -12,12 +12,35 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "section_1__hero": {
+      "type": "component",
+      "component": "shared.about-hero-sec",
+      "repeatable": false
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "about_text_sec": {
+      "type": "component",
+      "component": "shared.about-about-sec",
+      "repeatable": false
+    },
+    "about_team_sec": {
+      "type": "component",
+      "component": "shared.team-sec",
+      "repeatable": false
+    },
+    "about_gallery_sec": {
+      "type": "component",
+      "component": "shared.about-gallery-sec",
+      "repeatable": false
+    },
+    "about_contacts_sec": {
+      "type": "component",
+      "component": "shared.contacts-sec",
+      "repeatable": false
+    },
+    "about_offices_sec": {
+      "type": "component",
+      "component": "shared.offices-sec",
+      "repeatable": false
     }
   }
 }

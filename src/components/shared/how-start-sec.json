@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_how_start_secs",
+  "info": {
+    "displayName": "how_start_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Как начать?"
+    },
+    "clusters": {
+      "type": "component",
+      "component": "shared.how-start-cluster",
+      "repeatable": true
+    },
+    "button_text": {
+      "type": "string",
+      "default": "Начать взаимовыгодное сотрудничество"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_contacts_secs",
+  "info": {
+    "displayName": "contacts_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "telegram_title": {
+      "type": "string"
+    },
+    "telegram_link": {
+      "type": "string"
+    },
+    "map_coordinates_yandex": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

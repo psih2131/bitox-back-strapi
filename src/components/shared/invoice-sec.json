@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_invoice_secs",
+  "info": {
+    "displayName": "invoice_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "invoice_elements": {
+      "type": "component",
+      "component": "shared.invoice-element",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

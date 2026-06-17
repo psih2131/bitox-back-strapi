@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_about_hero_box_lists",
+  "info": {
+    "displayName": "about_hero_box-list"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

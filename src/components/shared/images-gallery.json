@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_images_galleries",
+  "info": {
+    "displayName": "images_gallery"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

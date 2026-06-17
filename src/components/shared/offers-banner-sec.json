@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_offers_banner_secs",
+  "info": {
+    "displayName": "offers_banner_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title_sec": {
+      "type": "string",
+      "default": "Спецпредложения"
+    },
+    "banners": {
+      "type": "component",
+      "component": "shared.offers-banner-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
