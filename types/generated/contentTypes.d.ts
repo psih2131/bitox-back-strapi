@@ -549,6 +549,61 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBusinessBusiness extends Struct.SingleTypeSchema {
+  collectionName: 'businesses';
+  info: {
+    displayName: 'Business';
+    pluralName: 'businesses';
+    singularName: 'business';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::business.business'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -859,6 +914,232 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiInvoiceSinglInvoiceSingl extends Struct.SingleTypeSchema {
+  collectionName: 'invoice_singls';
+  info: {
+    displayName: 'Invoice-singl';
+    pluralName: 'invoice-singls';
+    singularName: 'invoice-singl';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice-singl.invoice-singl'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
+  collectionName: 'invoices';
+  info: {
+    displayName: 'invoice';
+    pluralName: 'invoices';
+    singularName: 'invoice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    flag: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice.invoice'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiKonsaltingVedKonsaltingVed extends Struct.SingleTypeSchema {
+  collectionName: 'konsalting_veds';
+  info: {
+    displayName: 'Konsalting-ved';
+    pluralName: 'konsalting-veds';
+    singularName: 'konsalting-ved';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::konsalting-ved.konsalting-ved'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOplataValyutnogoKontraktaOplataValyutnogoKontrakta
+  extends Struct.SingleTypeSchema {
+  collectionName: 'oplata_valyutnogo_kontraktas';
+  info: {
+    displayName: 'Oplata-valyutnogo-kontrakta';
+    pluralName: 'oplata-valyutnogo-kontraktas';
+    singularName: 'oplata-valyutnogo-kontrakta';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::oplata-valyutnogo-kontrakta.oplata-valyutnogo-kontrakta'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPartnershipPartnership extends Struct.SingleTypeSchema {
   collectionName: 'partnerships';
   info: {
@@ -1129,6 +1410,62 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     postition: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVozvratValyutnojVyruchkiVozvratValyutnojVyruchki
+  extends Struct.SingleTypeSchema {
+  collectionName: 'vozvrat_valyutnoj_vyruchkis';
+  info: {
+    displayName: 'Vozvrat-valyutnoj-vyruchki';
+    pluralName: 'vozvrat-valyutnoj-vyruchkis';
+    singularName: 'vozvrat-valyutnoj-vyruchki';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vozvrat-valyutnoj-vyruchki.vozvrat-valyutnoj-vyruchki'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1649,6 +1986,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::business.business': ApiBusinessBusiness;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::docs-page.docs-page': ApiDocsPageDocsPage;
@@ -1657,6 +1995,10 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::header-component.header-component': ApiHeaderComponentHeaderComponent;
       'api::home.home': ApiHomeHome;
+      'api::invoice-singl.invoice-singl': ApiInvoiceSinglInvoiceSingl;
+      'api::invoice.invoice': ApiInvoiceInvoice;
+      'api::konsalting-ved.konsalting-ved': ApiKonsaltingVedKonsaltingVed;
+      'api::oplata-valyutnogo-kontrakta.oplata-valyutnogo-kontrakta': ApiOplataValyutnogoKontraktaOplataValyutnogoKontrakta;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::post.post': ApiPostPost;
       'api::review.review': ApiReviewReview;
@@ -1664,6 +2006,7 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::services-category.services-category': ApiServicesCategoryServicesCategory;
       'api::team.team': ApiTeamTeam;
+      'api::vozvrat-valyutnoj-vyruchki.vozvrat-valyutnoj-vyruchki': ApiVozvratValyutnojVyruchkiVozvratValyutnojVyruchki;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

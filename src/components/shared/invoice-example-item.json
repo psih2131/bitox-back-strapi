@@ -5,12 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "date": {
-      "type": "date"
+    "blog": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
     },
     "client": {
       "type": "string"
@@ -23,20 +21,7 @@
       "default": "75 000 EUR"
     },
     "time": {
-      "type": "string",
-      "default": "4 рабочих дня"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
-    "full_description": {
-      "type": "richtext"
+      "type": "string"
     }
   },
   "config": {}

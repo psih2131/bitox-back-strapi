@@ -9,18 +9,70 @@
   "options": {},
   "attributes": {
     "metaTitle": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "metaDescription": {
-      "type": "text",
-      "required": true
+      "type": "text"
     },
     "shareImage": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "twitterImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "keywords": {
+      "type": "text"
+    },
+    "canonicalUrl": {
+      "type": "string"
+    },
+    "ogUrl": {
+      "type": "string"
+    },
+    "metaRobots": {
+      "type": "enumeration",
+      "enum": [
+        "index,follow",
+        "noindex,follow",
+        "index,nofollow",
+        "noindex,nofollow"
+      ],
+      "default": "index,follow"
+    },
+    "ogTitle": {
+      "type": "string"
+    },
+    "ogDescription": {
+      "type": "text"
+    },
+    "ogType": {
+      "type": "enumeration",
+      "enum": [
+        "website",
+        "article",
+        "product"
+      ],
+      "default": "website"
+    },
+    "twitterCard": {
+      "type": "enumeration",
+      "enum": [
+        "summary",
+        "summary_large_image"
+      ],
+      "default": "summary_large_image"
+    },
+    "twitterTitle": {
+      "type": "string"
+    },
+    "twitterDescription": {
+      "type": "text"
     }
   }
 }

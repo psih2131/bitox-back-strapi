@@ -139,6 +139,16 @@ export interface SharedCountriesSec extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCountriesSecV2 extends Struct.ComponentSchema {
+  collectionName: 'components_shared_countries_sec_v2s';
+  info: {
+    displayName: 'countries_sec_v2';
+  };
+  attributes: {
+    title_section: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCtrSecV1 extends Struct.ComponentSchema {
   collectionName: 'components_shared_ctr_sec_v1s';
   info: {
@@ -381,16 +391,11 @@ export interface SharedInvoiceExampleItem extends Struct.ComponentSchema {
     displayName: 'Invoice_example_item';
   };
   attributes: {
+    blog: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
     client: Schema.Attribute.String;
     country: Schema.Attribute.String;
-    date: Schema.Attribute.Date;
-    full_description: Schema.Attribute.RichText;
-    image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
     price: Schema.Attribute.String & Schema.Attribute.DefaultTo<'75 000 EUR'>;
-    time: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'4 \u0440\u0430\u0431\u043E\u0447\u0438\u0445 \u0434\u043D\u044F'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    time: Schema.Attribute.String;
   };
 }
 
@@ -651,9 +656,27 @@ export interface SharedSeo extends Struct.ComponentSchema {
     name: 'Seo';
   };
   attributes: {
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    canonicalUrl: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    metaDescription: Schema.Attribute.Text;
+    metaRobots: Schema.Attribute.Enumeration<
+      ['index,follow', 'noindex,follow', 'index,nofollow', 'noindex,nofollow']
+    > &
+      Schema.Attribute.DefaultTo<'index,follow'>;
+    metaTitle: Schema.Attribute.String;
+    ogDescription: Schema.Attribute.Text;
+    ogTitle: Schema.Attribute.String;
+    ogType: Schema.Attribute.Enumeration<['website', 'article', 'product']> &
+      Schema.Attribute.DefaultTo<'website'>;
+    ogUrl: Schema.Attribute.String;
     shareImage: Schema.Attribute.Media<'images'>;
+    twitterCard: Schema.Attribute.Enumeration<
+      ['summary', 'summary_large_image']
+    > &
+      Schema.Attribute.DefaultTo<'summary_large_image'>;
+    twitterDescription: Schema.Attribute.Text;
+    twitterImage: Schema.Attribute.Media<'images'>;
+    twitterTitle: Schema.Attribute.String;
   };
 }
 
@@ -774,6 +797,7 @@ declare module '@strapi/strapi' {
       'shared.contacts-hero-sec': SharedContactsHeroSec;
       'shared.contacts-sec': SharedContactsSec;
       'shared.countries-sec': SharedCountriesSec;
+      'shared.countries-sec-v2': SharedCountriesSecV2;
       'shared.ctr-sec-v1': SharedCtrSecV1;
       'shared.economy-item': SharedEconomyItem;
       'shared.economy-sec': SharedEconomySec;

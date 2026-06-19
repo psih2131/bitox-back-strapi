@@ -1,0 +1,65 @@
+{
+  "kind": "singleType",
+  "collectionName": "businesses",
+  "info": {
+    "singularName": "business",
+    "pluralName": "businesses",
+    "displayName": "Business"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service_hero_sec": {
+      "type": "component",
+      "component": "shared.service-hero",
+      "repeatable": false
+    },
+    "service_stats_sec": {
+      "type": "component",
+      "component": "shared.stats-sec",
+      "repeatable": false
+    },
+    "services_invoice_sec": {
+      "type": "component",
+      "component": "shared.invoice-sec",
+      "repeatable": false
+    },
+    "service_economy_sec": {
+      "type": "component",
+      "component": "shared.economy-sec",
+      "repeatable": false
+    },
+    "services_benefits_sec": {
+      "type": "component",
+      "component": "shared.benefits-sec",
+      "repeatable": false
+    },
+    "service_county_sec_v2": {
+      "type": "component",
+      "component": "shared.countries-sec-v2",
+      "repeatable": false
+    },
+    "services_invoice_example_sec": {
+      "type": "component",
+      "component": "shared.invoice-example-sec",
+      "repeatable": false
+    },
+    "service_media_about_us_sec": {
+      "type": "component",
+      "component": "shared.media-about-us-sec",
+      "repeatable": false
+    },
+    "services_faq_sec": {
+      "type": "component",
+      "component": "shared.faq-sec",
+      "repeatable": false
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

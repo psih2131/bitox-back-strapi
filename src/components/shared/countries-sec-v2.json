@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_countries_sec_v2s",
+  "info": {
+    "displayName": "countries_sec_v2"
+  },
+  "options": {},
+  "attributes": {
+    "title_section": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
