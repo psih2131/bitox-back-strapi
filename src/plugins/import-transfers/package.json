@@ -1,0 +1,11 @@
+{
+  "name": "import-transfers",
+  "version": "1.0.0",
+  "private": true,
+  "strapi": {
+    "name": "import-transfers",
+    "displayName": "Import Transfers",
+    "description": "Import transfers pages from Excel",
+    "kind": "plugin"
+  }
+}

@@ -3,4 +3,8 @@ module.exports = () => ({
     enabled: true,
     resolve: './src/plugins/import-invoices',
   },
+  'import-transfers': {
+    enabled: true,
+    resolve: './src/plugins/import-transfers',
+  },
 });
