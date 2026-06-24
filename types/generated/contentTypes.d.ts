@@ -477,44 +477,6 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
-  collectionName: 'articles';
-  info: {
-    description: 'Create your blog content';
-    displayName: 'Article';
-    pluralName: 'articles';
-    singularName: 'article';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::article.article'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -546,6 +508,99 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     verified_author: Schema.Attribute.Boolean;
+  };
+}
+
+export interface ApiBenefitsComponentBenefitsComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'benefits_components';
+  info: {
+    displayName: '_benefits_component';
+    pluralName: 'benefits-components';
+    singularName: 'benefits-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    benefits_sec: Schema.Attribute.Component<'shared.benefits-sec', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::benefits-component.benefits-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBusinessPageBusinessPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'business_pages';
+  info: {
+    displayName: 'Business_pages';
+    pluralName: 'business-pages';
+    singularName: 'business-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::business-page.business-page'
+    > &
+      Schema.Attribute.Private;
+    preview_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    type_business_page: Schema.Attribute.Enumeration<['import', 'export']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'import'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -697,6 +752,35 @@ export interface ApiDocsPageDocsPage extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     text_editor: Schema.Attribute.RichText;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEconomyComponentEconomyComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'economy_components';
+  info: {
+    displayName: '_economy_component';
+    pluralName: 'economy-components';
+    singularName: 'economy-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    economy_section: Schema.Attribute.Component<'shared.economy-sec', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::economy-component.economy-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -914,6 +998,67 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiIndividualsPageIndividualsPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'individuals_pages';
+  info: {
+    displayName: 'Individuals_pages';
+    pluralName: 'individuals-pages';
+    singularName: 'individuals-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::individuals-page.individuals-page'
+    > &
+      Schema.Attribute.Private;
+    preview_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInvoiceSinglInvoiceSingl extends Struct.SingleTypeSchema {
   collectionName: 'invoice_singls';
   info: {
@@ -972,7 +1117,7 @@ export interface ApiInvoiceSinglInvoiceSingl extends Struct.SingleTypeSchema {
 export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
   collectionName: 'invoices';
   info: {
-    displayName: 'invoice';
+    displayName: 'Invoices_pages';
     pluralName: 'invoices';
     singularName: 'invoice';
   };
@@ -983,8 +1128,7 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    flag: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    flag: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1023,117 +1167,6 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiKonsaltingVedKonsaltingVed extends Struct.SingleTypeSchema {
-  collectionName: 'konsalting_veds';
-  info: {
-    displayName: 'Konsalting-ved';
-    pluralName: 'konsalting-veds';
-    singularName: 'konsalting-ved';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::konsalting-ved.konsalting-ved'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    Seo: Schema.Attribute.Component<'shared.seo', false>;
-    service_county_sec_v2: Schema.Attribute.Component<
-      'shared.countries-sec-v2',
-      false
-    >;
-    service_economy_sec: Schema.Attribute.Component<
-      'shared.economy-sec',
-      false
-    >;
-    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
-    service_media_about_us_sec: Schema.Attribute.Component<
-      'shared.media-about-us-sec',
-      false
-    >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
-    services_benefits_sec: Schema.Attribute.Component<
-      'shared.benefits-sec',
-      false
-    >;
-    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
-    services_invoice_example_sec: Schema.Attribute.Component<
-      'shared.invoice-example-sec',
-      false
-    >;
-    services_invoice_sec: Schema.Attribute.Component<
-      'shared.invoice-sec',
-      false
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiOplataValyutnogoKontraktaOplataValyutnogoKontrakta
-  extends Struct.SingleTypeSchema {
-  collectionName: 'oplata_valyutnogo_kontraktas';
-  info: {
-    displayName: 'Oplata-valyutnogo-kontrakta';
-    pluralName: 'oplata-valyutnogo-kontraktas';
-    singularName: 'oplata-valyutnogo-kontrakta';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::oplata-valyutnogo-kontrakta.oplata-valyutnogo-kontrakta'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    Seo: Schema.Attribute.Component<'shared.seo', false>;
-    service_county_sec_v2: Schema.Attribute.Component<
-      'shared.countries-sec-v2',
-      false
-    >;
-    service_economy_sec: Schema.Attribute.Component<
-      'shared.economy-sec',
-      false
-    >;
-    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
-    service_media_about_us_sec: Schema.Attribute.Component<
-      'shared.media-about-us-sec',
-      false
-    >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
-    services_benefits_sec: Schema.Attribute.Component<
-      'shared.benefits-sec',
-      false
-    >;
-    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
-    services_invoice_example_sec: Schema.Attribute.Component<
-      'shared.invoice-example-sec',
-      false
-    >;
-    services_invoice_sec: Schema.Attribute.Component<
-      'shared.invoice-sec',
-      false
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1228,7 +1261,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
 export interface ApiReviewReview extends Struct.CollectionTypeSchema {
   collectionName: 'reviews';
   info: {
-    displayName: 'reviews';
+    displayName: 'Reviews';
     pluralName: 'reviews';
     singularName: 'review';
   };
@@ -1239,6 +1272,7 @@ export interface ApiReviewReview extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
     first_name: Schema.Attribute.String;
     last_name: Schema.Attribute.String;
     link: Schema.Attribute.String;
@@ -1416,13 +1450,12 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiVozvratValyutnojVyruchkiVozvratValyutnojVyruchki
-  extends Struct.SingleTypeSchema {
-  collectionName: 'vozvrat_valyutnoj_vyruchkis';
+export interface ApiTransferTransfer extends Struct.SingleTypeSchema {
+  collectionName: 'transfers';
   info: {
-    displayName: 'Vozvrat-valyutnoj-vyruchki';
-    pluralName: 'vozvrat-valyutnoj-vyruchkis';
-    singularName: 'vozvrat-valyutnoj-vyruchki';
+    displayName: 'Transfer';
+    pluralName: 'transfers';
+    singularName: 'transfer';
   };
   options: {
     draftAndPublish: true;
@@ -1434,7 +1467,7 @@ export interface ApiVozvratValyutnojVyruchkiVozvratValyutnojVyruchki
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::vozvrat-valyutnoj-vyruchki.vozvrat-valyutnoj-vyruchki'
+      'api::transfer.transfer'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1466,6 +1499,67 @@ export interface ApiVozvratValyutnojVyruchkiVozvratValyutnojVyruchki
       'shared.invoice-sec',
       false
     >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTransfersPageTransfersPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'transfers_pages';
+  info: {
+    displayName: 'Transfers_pages';
+    pluralName: 'transfers-pages';
+    singularName: 'transfers-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    flag: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::transfers-page.transfers-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1984,21 +2078,22 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
-      'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::benefits-component.benefits-component': ApiBenefitsComponentBenefitsComponent;
+      'api::business-page.business-page': ApiBusinessPageBusinessPage;
       'api::business.business': ApiBusinessBusiness;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::docs-page.docs-page': ApiDocsPageDocsPage;
+      'api::economy-component.economy-component': ApiEconomyComponentEconomyComponent;
       'api::exchange.exchange': ApiExchangeExchange;
       'api::footer-component.footer-component': ApiFooterComponentFooterComponent;
       'api::global.global': ApiGlobalGlobal;
       'api::header-component.header-component': ApiHeaderComponentHeaderComponent;
       'api::home.home': ApiHomeHome;
+      'api::individuals-page.individuals-page': ApiIndividualsPageIndividualsPage;
       'api::invoice-singl.invoice-singl': ApiInvoiceSinglInvoiceSingl;
       'api::invoice.invoice': ApiInvoiceInvoice;
-      'api::konsalting-ved.konsalting-ved': ApiKonsaltingVedKonsaltingVed;
-      'api::oplata-valyutnogo-kontrakta.oplata-valyutnogo-kontrakta': ApiOplataValyutnogoKontraktaOplataValyutnogoKontrakta;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::post.post': ApiPostPost;
       'api::review.review': ApiReviewReview;
@@ -2006,7 +2101,8 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::services-category.services-category': ApiServicesCategoryServicesCategory;
       'api::team.team': ApiTeamTeam;
-      'api::vozvrat-valyutnoj-vyruchki.vozvrat-valyutnoj-vyruchki': ApiVozvratValyutnojVyruchkiVozvratValyutnojVyruchki;
+      'api::transfer.transfer': ApiTransferTransfer;
+      'api::transfers-page.transfers-page': ApiTransfersPageTransfersPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

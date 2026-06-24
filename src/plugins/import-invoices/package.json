@@ -1,0 +1,11 @@
+{
+  "name": "import-invoices",
+  "version": "1.0.0",
+  "private": true,
+  "strapi": {
+    "name": "import-invoices",
+    "displayName": "Import Invoices",
+    "description": "Import invoice pages from Excel",
+    "kind": "plugin"
+  }
+}

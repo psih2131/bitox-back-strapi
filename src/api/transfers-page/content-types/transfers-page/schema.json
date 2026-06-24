@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "invoices",
+  "collectionName": "transfers_pages",
   "info": {
-    "singularName": "invoice",
-    "pluralName": "invoices",
-    "displayName": "Invoices_pages"
+    "singularName": "transfers-page",
+    "pluralName": "transfers-pages",
+    "displayName": "Transfers_pages"
   },
   "options": {
     "draftAndPublish": true
@@ -26,7 +26,7 @@
     "flag": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"

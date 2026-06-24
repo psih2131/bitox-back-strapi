@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "benefits_components",
+  "info": {
+    "singularName": "benefits-component",
+    "pluralName": "benefits-components",
+    "displayName": "_benefits_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "benefits_sec": {
+      "type": "component",
+      "component": "shared.benefits-sec",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "economy_components",
+  "info": {
+    "singularName": "economy-component",
+    "pluralName": "economy-components",
+    "displayName": "_economy_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "economy_section": {
+      "type": "component",
+      "component": "shared.economy-sec",
+      "repeatable": false
+    }
+  }
+}

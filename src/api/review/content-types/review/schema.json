@@ -4,7 +4,7 @@
   "info": {
     "singularName": "review",
     "pluralName": "reviews",
-    "displayName": "reviews"
+    "displayName": "Reviews"
   },
   "options": {
     "draftAndPublish": true
@@ -32,6 +32,9 @@
       "relation": "manyToOne",
       "target": "api::reviews-category.reviews-category",
       "inversedBy": "reviews"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

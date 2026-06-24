@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "invoices",
+  "collectionName": "business_pages",
   "info": {
-    "singularName": "invoice",
-    "pluralName": "invoices",
-    "displayName": "Invoices_pages"
+    "singularName": "business-page",
+    "pluralName": "business-pages",
+    "displayName": "Business_pages"
   },
   "options": {
     "draftAndPublish": true
@@ -23,13 +23,22 @@
     "subtitle": {
       "type": "string"
     },
-    "flag": {
+    "preview_image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
+      ]
+    },
+    "type_business_page": {
+      "type": "enumeration",
+      "required": true,
+      "default": "import",
+      "enum": [
+        "import",
+        "export"
       ]
     },
     "service_hero_sec": {

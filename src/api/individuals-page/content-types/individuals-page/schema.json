@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "invoices",
+  "collectionName": "individuals_pages",
   "info": {
-    "singularName": "invoice",
-    "pluralName": "invoices",
-    "displayName": "Invoices_pages"
+    "singularName": "individuals-page",
+    "pluralName": "individuals-pages",
+    "displayName": "Individuals_pages"
   },
   "options": {
     "draftAndPublish": true
@@ -23,10 +23,10 @@
     "subtitle": {
       "type": "string"
     },
-    "flag": {
+    "preview_image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
