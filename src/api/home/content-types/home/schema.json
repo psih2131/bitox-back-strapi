@@ -65,6 +65,11 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "home_platform_sec": {
+      "type": "component",
+      "component": "shared.home-platforms",
+      "repeatable": false
     }
   }
 }

@@ -133,7 +133,6 @@ export interface SharedCountriesSec extends Struct.ComponentSchema {
   attributes: {
     button_title: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'\u0423\u0437\u043D\u0430\u0442\u044C \u043A\u0430\u043A \u0441\u044D\u043A\u043E\u043D\u043E\u043C\u0438\u0442\u044C \u043D\u0430 \u043F\u043B\u0430\u0442\u0435\u0436\u0435'>;
-    countries_list: Schema.Attribute.Component<'shared.state-item', true>;
     title: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'\u041C\u0435\u0436\u0434\u0443\u043D\u0430\u0440\u043E\u0434\u043D\u044B\u0435 \u043F\u043B\u0430\u0442\u0435\u0436\u0438 \u043F\u043E \u0432\u0441\u0435\u043C\u0443 \u043C\u0438\u0440\u0443'>;
   };
@@ -292,6 +291,20 @@ export interface SharedHomeHeroCardItem extends Struct.ComponentSchema {
   attributes: {
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHomePlatforms extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_platforms';
+  info: {
+    displayName: 'home_platforms';
+  };
+  attributes: {
+    col_1_subtitle: Schema.Attribute.String;
+    col_1_title: Schema.Attribute.String;
+    col_2_subtitle: Schema.Attribute.String;
+    col_2_title: Schema.Attribute.String;
+    section_title: Schema.Attribute.String;
   };
 }
 
@@ -809,6 +822,7 @@ declare module '@strapi/strapi' {
       'shared.header-contacts': SharedHeaderContacts;
       'shared.home-hero': SharedHomeHero;
       'shared.home-hero-card-item': SharedHomeHeroCardItem;
+      'shared.home-platforms': SharedHomePlatforms;
       'shared.how-be-partners': SharedHowBePartners;
       'shared.how-start-cluster': SharedHowStartCluster;
       'shared.how-start-cluster-item': SharedHowStartClusterItem;

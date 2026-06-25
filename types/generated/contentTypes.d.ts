@@ -834,6 +834,52 @@ export interface ApiEconomyComponentEconomyComponent
   };
 }
 
+export interface ApiExchangePageExchangePage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'exchange_pages';
+  info: {
+    displayName: 'Exchange_pages';
+    pluralName: 'exchange-pages';
+    singularName: 'exchange-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    exchange_client_use_sec: Schema.Attribute.Component<
+      'shared.clients-use',
+      false
+    >;
+    exchange_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    exchange_hero_sec: Schema.Attribute.Component<
+      'shared.exchange-hero-sec',
+      false
+    >;
+    exchange_sec_staps: Schema.Attribute.Component<
+      'shared.exchange-staps-sec',
+      false
+    >;
+    exchange_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
+    exhange_seo_sec: Schema.Attribute.Component<'shared.seo-sec', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::exchange-page.exchange-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo_cluster: Schema.Attribute.Component<'shared.seo', true>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExchangeExchange extends Struct.SingleTypeSchema {
   collectionName: 'exchanges';
   info: {
@@ -1026,6 +1072,10 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     >;
     home_offers_banners_sec: Schema.Attribute.Component<
       'shared.offers-banner-sec',
+      false
+    >;
+    home_platform_sec: Schema.Attribute.Component<
+      'shared.home-platforms',
       false
     >;
     home_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
@@ -1321,100 +1371,6 @@ export interface ApiReviewsCategoryReviewsCategory
     publishedAt: Schema.Attribute.DateTime;
     rate_category: Schema.Attribute.Decimal;
     reviews: Schema.Attribute.Relation<'oneToMany', 'api::review.review'>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiServiceService extends Struct.CollectionTypeSchema {
-  collectionName: 'services';
-  info: {
-    displayName: 'Services';
-    pluralName: 'services';
-    singularName: 'service';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::service.service'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    Seo: Schema.Attribute.Component<'shared.seo', false>;
-    service_economy_sec: Schema.Attribute.Component<
-      'shared.economy-sec',
-      false
-    >;
-    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
-    service_media_about_us_sec: Schema.Attribute.Component<
-      'shared.media-about-us-sec',
-      false
-    >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
-    services_benefits_sec: Schema.Attribute.Component<
-      'shared.benefits-sec',
-      false
-    >;
-    services_category: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::services-category.services-category'
-    >;
-    services_countries_list: Schema.Attribute.Component<
-      'shared.countries-sec',
-      false
-    >;
-    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
-    services_invoice_example_sec: Schema.Attribute.Component<
-      'shared.invoice-example-sec',
-      false
-    >;
-    services_invoice_sec: Schema.Attribute.Component<
-      'shared.invoice-sec',
-      false
-    >;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiServicesCategoryServicesCategory
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'services_categories';
-  info: {
-    displayName: 'Services category';
-    pluralName: 'services-categories';
-    singularName: 'services-category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::services-category.services-category'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
-    subtitle: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2085,6 +2041,7 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::docs-page.docs-page': ApiDocsPageDocsPage;
       'api::economy-component.economy-component': ApiEconomyComponentEconomyComponent;
+      'api::exchange-page.exchange-page': ApiExchangePageExchangePage;
       'api::exchange.exchange': ApiExchangeExchange;
       'api::footer-component.footer-component': ApiFooterComponentFooterComponent;
       'api::global-info.global-info': ApiGlobalInfoGlobalInfo;
@@ -2096,8 +2053,6 @@ declare module '@strapi/strapi' {
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::review.review': ApiReviewReview;
       'api::reviews-category.reviews-category': ApiReviewsCategoryReviewsCategory;
-      'api::service.service': ApiServiceService;
-      'api::services-category.services-category': ApiServicesCategoryServicesCategory;
       'api::team.team': ApiTeamTeam;
       'api::transfer.transfer': ApiTransferTransfer;
       'api::transfers-page.transfers-page': ApiTransfersPageTransfersPage;

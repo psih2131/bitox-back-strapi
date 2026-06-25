@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_home_platforms",
+  "info": {
+    "displayName": "home_platforms"
+  },
+  "options": {},
+  "attributes": {
+    "section_title": {
+      "type": "string"
+    },
+    "col_1_title": {
+      "type": "string"
+    },
+    "col_1_subtitle": {
+      "type": "string"
+    },
+    "col_2_title": {
+      "type": "string"
+    },
+    "col_2_subtitle": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -12,11 +12,6 @@
     "button_title": {
       "type": "string",
       "default": "Узнать как сэкономить на платеже"
-    },
-    "countries_list": {
-      "type": "component",
-      "component": "shared.state-item",
-      "repeatable": true
     }
   },
   "config": {}
