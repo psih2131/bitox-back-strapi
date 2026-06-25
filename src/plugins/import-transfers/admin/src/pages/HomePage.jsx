@@ -65,7 +65,7 @@ const HomePage = () => {
           <Typography variant="beta">Импорт страниц Transfers_pages</Typography>
 
           <Typography variant="pi" textColor="neutral600">
-            A: URL (slug). B: hero subtitle. C/D: stats_element (2 блока). E: FAQ title. F–M: 4 вопроса и ответа.
+            A: URL (slug). B: hero subtitle. C/D: invoice_elements (2 блока). E: FAQ title. F–M: 4 вопроса и ответа.
           </Typography>
 
           <input

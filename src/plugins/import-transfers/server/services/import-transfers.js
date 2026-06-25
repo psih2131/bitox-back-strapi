@@ -2,15 +2,15 @@
 
 const parseTransferXlsx = require('./parse-transfer-xlsx');
 
-const STATS_ELEMENT_TITLES = [
+const INVOICE_ELEMENT_TITLES = [
   'Для физических лиц',
   'Для юридических лиц',
 ];
 
-function buildStatsElements(row) {
-  const subtitles = [row.statsElement1, row.statsElement2];
+function buildInvoiceElements(row) {
+  const subtitles = [row.invoiceElement1, row.invoiceElement2];
 
-  return STATS_ELEMENT_TITLES.map((title, index) => ({
+  return INVOICE_ELEMENT_TITLES.map((title, index) => ({
     title,
     subtitle: subtitles[index] || '',
   }));
@@ -39,8 +39,8 @@ function buildTransferData(row) {
       title: row.slug,
       subtitle: row.subtitle,
     },
-    service_stats_sec: {
-      stats_element: buildStatsElements(row),
+    services_invoice_sec: {
+      invoice_elements: buildInvoiceElements(row),
     },
     services_faq_sec: {
       title: row.faqTitle,

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_infos",
+  "info": {
+    "singularName": "global-info",
+    "pluralName": "global-infos",
+    "displayName": "_global_info"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reviews_counter_text": {
+      "type": "string"
+    }
+  }
+}

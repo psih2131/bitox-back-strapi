@@ -866,32 +866,28 @@ export interface ApiFooterComponentFooterComponent
   };
 }
 
-export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
-  collectionName: 'globals';
+export interface ApiGlobalInfoGlobalInfo extends Struct.SingleTypeSchema {
+  collectionName: 'global_infos';
   info: {
-    description: 'Define global settings';
-    displayName: 'Global';
-    pluralName: 'globals';
-    singularName: 'global';
+    displayName: '_global_info';
+    pluralName: 'global-infos';
+    singularName: 'global-info';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
-    favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::global.global'
+      'api::global-info.global-info'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    reviews_counter_text: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2087,7 +2083,7 @@ declare module '@strapi/strapi' {
       'api::economy-component.economy-component': ApiEconomyComponentEconomyComponent;
       'api::exchange.exchange': ApiExchangeExchange;
       'api::footer-component.footer-component': ApiFooterComponentFooterComponent;
-      'api::global.global': ApiGlobalGlobal;
+      'api::global-info.global-info': ApiGlobalInfoGlobalInfo;
       'api::header-component.header-component': ApiHeaderComponentHeaderComponent;
       'api::home.home': ApiHomeHome;
       'api::individuals-page.individuals-page': ApiIndividualsPageIndividualsPage;
