@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "blog",
+  "collectionName": "blog_posts",
   "info": {
-    "singularName": "post",
-    "pluralName": "blog",
-    "displayName": "blog"
+    "singularName": "blog-post",
+    "pluralName": "blog-posts",
+    "displayName": "Blog_posts"
   },
   "options": {
     "draftAndPublish": true
@@ -29,6 +29,12 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::author.author",
+      "inversedBy": "blogs"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
       "inversedBy": "blogs"
     },
     "post_image": {
@@ -59,12 +65,6 @@
     "time_read_post": {
       "type": "string",
       "default": "5"
-    },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "blogs"
     }
   }
 }

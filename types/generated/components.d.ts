@@ -391,7 +391,7 @@ export interface SharedInvoiceExampleItem extends Struct.ComponentSchema {
     displayName: 'Invoice_example_item';
   };
   attributes: {
-    blog: Schema.Attribute.Relation<'oneToOne', 'api::post.post'>;
+    blog: Schema.Attribute.Relation<'oneToOne', 'api::blog-post.blog-post'>;
     client: Schema.Attribute.String;
     country: Schema.Attribute.String;
     price: Schema.Attribute.String & Schema.Attribute.DefaultTo<'75 000 EUR'>;

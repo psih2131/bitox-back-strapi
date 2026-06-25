@@ -21,7 +21,7 @@
     "blogs": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::post.post",
+      "target": "api::blog-post.blog-post",
       "mappedBy": "category"
     },
     "description": {

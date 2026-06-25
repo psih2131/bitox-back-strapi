@@ -491,7 +491,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   attributes: {
     about_autor: Schema.Attribute.String;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    blogs: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog-post.blog-post'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -534,6 +534,53 @@ export interface ApiBenefitsComponentBenefitsComponent
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
+  collectionName: 'blog_posts';
+  info: {
+    displayName: 'Blog_posts';
+    pluralName: 'blog-posts';
+    singularName: 'blog-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-post.blog-post'
+    > &
+      Schema.Attribute.Private;
+    post_content_builder: Schema.Attribute.DynamicZone<
+      ['shared.quote-text', 'shared.text-editor']
+    >;
+    post_description: Schema.Attribute.Text;
+    post_image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    post_questions_section: Schema.Attribute.Component<
+      'shared.post-questions',
+      false
+    >;
+    post_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 5;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo_cluster: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'post_title'> & Schema.Attribute.Required;
+    time_read_post: Schema.Attribute.String & Schema.Attribute.DefaultTo<'5'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -671,7 +718,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    blogs: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog-post.blog-post'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1204,50 +1251,6 @@ export interface ApiPartnershipPartnership extends Struct.SingleTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     seo_cluster: Schema.Attribute.Component<'shared.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPostPost extends Struct.CollectionTypeSchema {
-  collectionName: 'blog';
-  info: {
-    displayName: 'blog';
-    pluralName: 'blog';
-    singularName: 'post';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::post.post'> &
-      Schema.Attribute.Private;
-    post_content_builder: Schema.Attribute.DynamicZone<
-      ['shared.quote-text', 'shared.text-editor']
-    >;
-    post_description: Schema.Attribute.Text;
-    post_image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    post_questions_section: Schema.Attribute.Component<
-      'shared.post-questions',
-      false
-    >;
-    post_title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-        minLength: 5;
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    seo_cluster: Schema.Attribute.Component<'shared.seo', false>;
-    slug: Schema.Attribute.UID<'post_title'> & Schema.Attribute.Required;
-    time_read_post: Schema.Attribute.String & Schema.Attribute.DefaultTo<'5'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2075,6 +2078,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::author.author': ApiAuthorAuthor;
       'api::benefits-component.benefits-component': ApiBenefitsComponentBenefitsComponent;
+      'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::business-page.business-page': ApiBusinessPageBusinessPage;
       'api::business.business': ApiBusinessBusiness;
       'api::category.category': ApiCategoryCategory;
@@ -2090,7 +2094,6 @@ declare module '@strapi/strapi' {
       'api::invoice-singl.invoice-singl': ApiInvoiceSinglInvoiceSingl;
       'api::invoice.invoice': ApiInvoiceInvoice;
       'api::partnership.partnership': ApiPartnershipPartnership;
-      'api::post.post': ApiPostPost;
       'api::review.review': ApiReviewReview;
       'api::reviews-category.reviews-category': ApiReviewsCategoryReviewsCategory;
       'api::service.service': ApiServiceService;
