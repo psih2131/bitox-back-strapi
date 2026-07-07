@@ -16,11 +16,6 @@
       "component": "shared.home-hero",
       "repeatable": false
     },
-    "home_stats_sec": {
-      "type": "component",
-      "component": "shared.stats-sec",
-      "repeatable": false
-    },
     "home_offers_banners_sec": {
       "type": "component",
       "component": "shared.offers-banner-sec",

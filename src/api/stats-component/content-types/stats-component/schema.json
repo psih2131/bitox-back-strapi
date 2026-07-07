@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "stats_components",
+  "info": {
+    "singularName": "stats-component",
+    "pluralName": "stats-components",
+    "displayName": "_stats_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stats_section": {
+      "type": "component",
+      "component": "shared.stats-sec",
+      "repeatable": false
+    }
+  }
+}

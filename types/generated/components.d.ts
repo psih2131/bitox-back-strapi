@@ -60,6 +60,16 @@ export interface SharedBenefitItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBenefitItemList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_benefit_item_lists';
+  info: {
+    displayName: 'benefit_item_list';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface SharedBenefitsSec extends Struct.ComponentSchema {
   collectionName: 'components_shared_benefits_secs';
   info: {
@@ -68,6 +78,28 @@ export interface SharedBenefitsSec extends Struct.ComponentSchema {
   attributes: {
     benefits_items: Schema.Attribute.Component<'shared.benefit-item', true>;
     title_section: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBenefitsSecV2 extends Struct.ComponentSchema {
+  collectionName: 'components_shared_benefits_sec_v2s';
+  info: {
+    displayName: 'benefits_sec_v2';
+  };
+  attributes: {
+    block_1_text: Schema.Attribute.Text;
+    block_1_title: Schema.Attribute.String;
+    block_2_text_1: Schema.Attribute.Text;
+    block_2_text_2: Schema.Attribute.Text;
+    block_2_text_3: Schema.Attribute.Text;
+    block_2_title: Schema.Attribute.String;
+    block_3_text: Schema.Attribute.Text;
+    block_3_title: Schema.Attribute.String;
+    block_4_text: Schema.Attribute.Text;
+    block_4_title: Schema.Attribute.String;
+    block_5_list: Schema.Attribute.Component<'shared.benefit-item-list', true>;
+    block_5_title: Schema.Attribute.String;
+    section_title: Schema.Attribute.String;
   };
 }
 
@@ -156,6 +188,7 @@ export interface SharedCtrSecV1 extends Struct.ComponentSchema {
   attributes: {
     button_text_white: Schema.Attribute.String;
     button_text_yellow: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
   };
 }
@@ -278,8 +311,6 @@ export interface SharedHomeHero extends Struct.ComponentSchema {
     title: Schema.Attribute.String;
     title_short_text_1: Schema.Attribute.String;
     title_short_text_2: Schema.Attribute.String;
-    total_amount_today: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'2.000.000 $'>;
   };
 }
 
@@ -804,7 +835,9 @@ declare module '@strapi/strapi' {
       'shared.about-hero-box-list': SharedAboutHeroBoxList;
       'shared.about-hero-sec': SharedAboutHeroSec;
       'shared.benefit-item': SharedBenefitItem;
+      'shared.benefit-item-list': SharedBenefitItemList;
       'shared.benefits-sec': SharedBenefitsSec;
+      'shared.benefits-sec-v2': SharedBenefitsSecV2;
       'shared.clients-use': SharedClientsUse;
       'shared.clients-use-element': SharedClientsUseElement;
       'shared.contacts-hero-sec': SharedContactsHeroSec;

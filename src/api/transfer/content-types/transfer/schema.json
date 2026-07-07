@@ -16,11 +16,6 @@
       "component": "shared.service-hero",
       "repeatable": false
     },
-    "service_stats_sec": {
-      "type": "component",
-      "component": "shared.stats-sec",
-      "repeatable": false
-    },
     "services_invoice_sec": {
       "type": "component",
       "component": "shared.invoice-sec",

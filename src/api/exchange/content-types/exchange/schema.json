@@ -16,9 +16,9 @@
       "component": "shared.exchange-hero-sec",
       "repeatable": false
     },
-    "exchange_stats_sec": {
+    "benefits_sec": {
       "type": "component",
-      "component": "shared.stats-sec",
+      "component": "shared.benefits-sec-v2",
       "repeatable": false
     },
     "exchange_client_use_sec": {

@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_shared_benefits_sec_v2s",
+  "info": {
+    "displayName": "benefits_sec_v2"
+  },
+  "options": {},
+  "attributes": {
+    "section_title": {
+      "type": "string"
+    },
+    "block_1_title": {
+      "type": "string"
+    },
+    "block_1_text": {
+      "type": "text"
+    },
+    "block_2_title": {
+      "type": "string"
+    },
+    "block_2_text_1": {
+      "type": "text"
+    },
+    "block_2_text_2": {
+      "type": "text"
+    },
+    "block_2_text_3": {
+      "type": "text"
+    },
+    "block_3_title": {
+      "type": "string"
+    },
+    "block_3_text": {
+      "type": "text"
+    },
+    "block_4_title": {
+      "type": "string"
+    },
+    "block_4_text": {
+      "type": "text"
+    },
+    "block_5_title": {
+      "type": "string"
+    },
+    "block_5_list": {
+      "type": "component",
+      "component": "shared.benefit-item-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

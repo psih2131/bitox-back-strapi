@@ -625,7 +625,6 @@ export interface ApiBusinessPageBusinessPage
       'shared.media-about-us-sec',
       false
     >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     services_benefits_sec: Schema.Attribute.Component<
       'shared.benefits-sec',
       false
@@ -686,7 +685,6 @@ export interface ApiBusinessBusiness extends Struct.SingleTypeSchema {
       'shared.media-about-us-sec',
       false
     >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     services_benefits_sec: Schema.Attribute.Component<
       'shared.benefits-sec',
       false
@@ -846,6 +844,7 @@ export interface ApiExchangePageExchangePage
     draftAndPublish: true;
   };
   attributes: {
+    benefits_sec: Schema.Attribute.Component<'shared.benefits-sec-v2', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -862,7 +861,6 @@ export interface ApiExchangePageExchangePage
       'shared.exchange-staps-sec',
       false
     >;
-    exchange_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     exhange_seo_sec: Schema.Attribute.Component<'shared.seo-sec', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -891,6 +889,7 @@ export interface ApiExchangeExchange extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    benefits_sec: Schema.Attribute.Component<'shared.benefits-sec-v2', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -907,7 +906,6 @@ export interface ApiExchangeExchange extends Struct.SingleTypeSchema {
       'shared.exchange-staps-sec',
       false
     >;
-    exchange_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     exhange_seo_sec: Schema.Attribute.Component<'shared.seo-sec', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1078,7 +1076,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       'shared.home-platforms',
       false
     >;
-    home_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     home_team_sec: Schema.Attribute.Component<'shared.team-sec', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
@@ -1129,7 +1126,6 @@ export interface ApiIndividualsPageIndividualsPage
       'shared.media-about-us-sec',
       false
     >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     services_benefits_sec: Schema.Attribute.Component<
       'shared.benefits-sec',
       false
@@ -1187,7 +1183,6 @@ export interface ApiInvoiceSinglInvoiceSingl extends Struct.SingleTypeSchema {
       'shared.media-about-us-sec',
       false
     >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     services_benefits_sec: Schema.Attribute.Component<
       'shared.benefits-sec',
       false
@@ -1243,7 +1238,6 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
       'shared.media-about-us-sec',
       false
     >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     services_benefits_sec: Schema.Attribute.Component<
       'shared.benefits-sec',
       false
@@ -1377,6 +1371,35 @@ export interface ApiReviewsCategoryReviewsCategory
   };
 }
 
+export interface ApiStatsComponentStatsComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'stats_components';
+  info: {
+    displayName: '_stats_component';
+    pluralName: 'stats-components';
+    singularName: 'stats-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stats-component.stats-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    stats_section: Schema.Attribute.Component<'shared.stats-sec', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
   collectionName: 'teams';
   info: {
@@ -1440,7 +1463,6 @@ export interface ApiTransferTransfer extends Struct.SingleTypeSchema {
       'shared.media-about-us-sec',
       false
     >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     services_benefits_sec: Schema.Attribute.Component<
       'shared.benefits-sec',
       false
@@ -1497,7 +1519,6 @@ export interface ApiTransfersPageTransfersPage
       'shared.media-about-us-sec',
       false
     >;
-    service_stats_sec: Schema.Attribute.Component<'shared.stats-sec', false>;
     services_benefits_sec: Schema.Attribute.Component<
       'shared.benefits-sec',
       false
@@ -2053,6 +2074,7 @@ declare module '@strapi/strapi' {
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::review.review': ApiReviewReview;
       'api::reviews-category.reviews-category': ApiReviewsCategoryReviewsCategory;
+      'api::stats-component.stats-component': ApiStatsComponentStatsComponent;
       'api::team.team': ApiTeamTeam;
       'api::transfer.transfer': ApiTransferTransfer;
       'api::transfers-page.transfers-page': ApiTransfersPageTransfersPage;

@@ -21,10 +21,6 @@
       "type": "component",
       "component": "shared.home-hero-card-item",
       "repeatable": true
-    },
-    "total_amount_today": {
-      "type": "string",
-      "default": "2.000.000 $"
     }
   },
   "config": {}
