@@ -15,6 +15,9 @@
       "type": "string",
       "required": true
     },
+    "title_nav_meny": {
+      "type": "string"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title",
