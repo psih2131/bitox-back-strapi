@@ -30,15 +30,17 @@
       "default": "Позвоните мне",
       "required": false
     },
-    "text_logo": {
-      "type": "string",
-      "default": "Bitox",
-      "required": true
-    },
     "ctr_button_text": {
       "type": "string",
       "default": "Консультация",
       "required": true
+    },
+    "header_logo_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

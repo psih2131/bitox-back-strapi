@@ -940,15 +940,13 @@ export interface ApiFooterComponentFooterComponent
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    footer_logo: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::footer-component.footer-component'
     > &
       Schema.Attribute.Private;
-    logo_text: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Bitox'>;
     publishedAt: Schema.Attribute.DateTime;
     socials_media_links: Schema.Attribute.Component<'shared.social-item', true>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1017,6 +1015,7 @@ export interface ApiHeaderComponentHeaderComponent
         },
         number
       >;
+    header_logo_img: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1024,9 +1023,6 @@ export interface ApiHeaderComponentHeaderComponent
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    text_logo: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Bitox'>;
     time_work: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'9:00-20:00, \u041F\u043D-\u0412\u0441'>;
     updatedAt: Schema.Attribute.DateTime;
