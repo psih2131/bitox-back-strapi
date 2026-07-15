@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_exchange_culc_invoice_data",
+  "info": {
+    "displayName": "exchange_culc_invoice_data"
+  },
+  "options": {},
+  "attributes": {
+    "states_list": {
+      "type": "component",
+      "component": "shared.exchange-culc-invoice-states",
+      "repeatable": true
+    },
+    "money_type_lists": {
+      "type": "component",
+      "component": "shared.exchange-culc-invoice-type",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_exchange_culc_pairs",
+  "info": {
+    "displayName": "exchange_culc_pair"
+  },
+  "options": {},
+  "attributes": {
+    "what_you_give": {
+      "type": "string"
+    },
+    "what_you_get": {
+      "type": "component",
+      "component": "shared.exchange-culc-give-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

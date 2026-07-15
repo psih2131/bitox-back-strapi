@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_exchange_calc_secs",
+  "info": {
+    "displayName": "exchange_calc_sec"
+  },
+  "options": {},
+  "attributes": {
+    "exchange_data": {
+      "type": "component",
+      "component": "shared.exchange-calc-data",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

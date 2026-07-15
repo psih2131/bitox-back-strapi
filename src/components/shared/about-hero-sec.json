@@ -12,6 +12,13 @@
       "type": "component",
       "component": "shared.about-hero-box-list",
       "repeatable": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}

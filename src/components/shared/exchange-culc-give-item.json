@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_exchange_culc_give_items",
+  "info": {
+    "displayName": "exchange_culc_give_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal",
+      "column": {
+        "type": "decimal",
+        "args": [20, 10]
+      }
+    }
+  },
+  "config": {}
+}

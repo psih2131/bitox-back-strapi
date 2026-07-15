@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_exchange_calc_countries",
+  "info": {
+    "displayName": "exchange_calc_country"
+  },
+  "options": {},
+  "attributes": {
+    "name_country": {
+      "type": "string"
+    },
+    "exchange_list": {
+      "type": "component",
+      "component": "shared.exchange-culc-pair",
+      "repeatable": true
+    },
+    "citys": {
+      "type": "component",
+      "component": "shared.exchange-calc-citys",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

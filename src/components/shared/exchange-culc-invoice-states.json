@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_exchange_culc_invoice_states",
+  "info": {
+    "displayName": "exchange_culc_invoice_states"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

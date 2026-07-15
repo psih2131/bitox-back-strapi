@@ -477,6 +477,38 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAdditionalDataAdditionalData
+  extends Struct.SingleTypeSchema {
+  collectionName: 'additional_datas';
+  info: {
+    displayName: '_additional_data';
+    pluralName: 'additional-datas';
+    singularName: 'additional-data';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    home_hero_form_data: Schema.Attribute.Component<
+      'shared.form-country',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::additional-data.additional-data'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -823,6 +855,35 @@ export interface ApiEconomyComponentEconomyComponent
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::economy-component.economy-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiExchangeCalcComponentExchangeCalcComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'exchange_calc_components';
+  info: {
+    displayName: '_exchange_calc_component';
+    pluralName: 'exchange-calc-components';
+    singularName: 'exchange-calc-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    calc: Schema.Attribute.Component<'shared.exchange-calc-sec', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::exchange-calc-component.exchange-calc-component'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1490,6 +1551,12 @@ export interface ApiTransfersPageTransfersPage
     draftAndPublish: true;
   };
   attributes: {
+    add_to_nav_menu_export: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    add_to_nav_menu_import: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    add_to_nav_menu_individual: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2050,6 +2117,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::additional-data.additional-data': ApiAdditionalDataAdditionalData;
       'api::author.author': ApiAuthorAuthor;
       'api::benefits-component.benefits-component': ApiBenefitsComponentBenefitsComponent;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
@@ -2059,6 +2127,7 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::docs-page.docs-page': ApiDocsPageDocsPage;
       'api::economy-component.economy-component': ApiEconomyComponentEconomyComponent;
+      'api::exchange-calc-component.exchange-calc-component': ApiExchangeCalcComponentExchangeCalcComponent;
       'api::exchange-page.exchange-page': ApiExchangePageExchangePage;
       'api::exchange.exchange': ApiExchangeExchange;
       'api::footer-component.footer-component': ApiFooterComponentFooterComponent;

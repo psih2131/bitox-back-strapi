@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_exchange_culc_invoice_types",
+  "info": {
+    "displayName": "exchange_culc_invoice_type"
+  },
+  "options": {},
+  "attributes": {
+    "name_money": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

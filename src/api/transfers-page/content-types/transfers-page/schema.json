@@ -79,6 +79,18 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "add_to_nav_menu_individual": {
+      "type": "boolean",
+      "default": false
+    },
+    "add_to_nav_menu_import": {
+      "type": "boolean",
+      "default": false
+    },
+    "add_to_nav_menu_export": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

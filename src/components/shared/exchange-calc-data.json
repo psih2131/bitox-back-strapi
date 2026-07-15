@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_exchange_calc_data",
+  "info": {
+    "displayName": "exchange_calc_data"
+  },
+  "options": {},
+  "attributes": {
+    "without_cache": {
+      "type": "component",
+      "component": "shared.exchange-calc-country",
+      "repeatable": true
+    },
+    "cache": {
+      "type": "component",
+      "component": "shared.exchange-calc-country",
+      "repeatable": true
+    },
+    "invoices": {
+      "type": "component",
+      "component": "shared.exchange-culc-invoice-data",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

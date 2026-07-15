@@ -45,6 +45,7 @@ export interface SharedAboutHeroSec extends Struct.ComponentSchema {
       'shared.about-hero-box-list',
       true
     >;
+    image: Schema.Attribute.Media<'images'>;
     section_title: Schema.Attribute.String;
   };
 }
@@ -219,6 +220,126 @@ export interface SharedEconomySec extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedExchangeCalcCitys extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_calc_citys';
+  info: {
+    displayName: 'exchange_calc_citys';
+  };
+  attributes: {
+    city_name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedExchangeCalcCountry extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_calc_countries';
+  info: {
+    displayName: 'exchange_calc_country';
+  };
+  attributes: {
+    citys: Schema.Attribute.Component<'shared.exchange-calc-citys', true>;
+    exchange_list: Schema.Attribute.Component<
+      'shared.exchange-culc-pair',
+      true
+    >;
+    name_country: Schema.Attribute.String;
+  };
+}
+
+export interface SharedExchangeCalcData extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_calc_data';
+  info: {
+    displayName: 'exchange_calc_data';
+  };
+  attributes: {
+    cache: Schema.Attribute.Component<'shared.exchange-calc-country', true>;
+    invoices: Schema.Attribute.Component<
+      'shared.exchange-culc-invoice-data',
+      false
+    >;
+    without_cache: Schema.Attribute.Component<
+      'shared.exchange-calc-country',
+      true
+    >;
+  };
+}
+
+export interface SharedExchangeCalcSec extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_calc_secs';
+  info: {
+    displayName: 'exchange_calc_sec';
+  };
+  attributes: {
+    exchange_data: Schema.Attribute.Component<
+      'shared.exchange-calc-data',
+      false
+    >;
+  };
+}
+
+export interface SharedExchangeCulcGiveItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_culc_give_items';
+  info: {
+    displayName: 'exchange_culc_give_item';
+  };
+  attributes: {
+    price: Schema.Attribute.Decimal;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedExchangeCulcInvoiceData extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_culc_invoice_data';
+  info: {
+    displayName: 'exchange_culc_invoice_data';
+  };
+  attributes: {
+    money_type_lists: Schema.Attribute.Component<
+      'shared.exchange-culc-invoice-type',
+      true
+    >;
+    states_list: Schema.Attribute.Component<
+      'shared.exchange-culc-invoice-states',
+      true
+    >;
+  };
+}
+
+export interface SharedExchangeCulcInvoiceStates
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_culc_invoice_states';
+  info: {
+    displayName: 'exchange_culc_invoice_states';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedExchangeCulcInvoiceType extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_culc_invoice_types';
+  info: {
+    displayName: 'exchange_culc_invoice_type';
+  };
+  attributes: {
+    name_money: Schema.Attribute.String;
+    symbol: Schema.Attribute.String;
+  };
+}
+
+export interface SharedExchangeCulcPair extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exchange_culc_pairs';
+  info: {
+    displayName: 'exchange_culc_pair';
+  };
+  attributes: {
+    what_you_get: Schema.Attribute.Component<
+      'shared.exchange-culc-give-item',
+      true
+    >;
+    what_you_give: Schema.Attribute.String;
+  };
+}
+
 export interface SharedExchangeHeroSec extends Struct.ComponentSchema {
   collectionName: 'components_shared_exchange_hero_secs';
   info: {
@@ -285,6 +406,18 @@ export interface SharedFooterContactItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFormCountry extends Struct.ComponentSchema {
+  collectionName: 'components_shared_form_countries';
+  info: {
+    displayName: 'form_country';
+  };
+  attributes: {
+    flag: Schema.Attribute.Media<'images'>;
+    symbol: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHeaderContacts extends Struct.ComponentSchema {
   collectionName: 'components_shared_header_contacts';
   info: {
@@ -331,8 +464,10 @@ export interface SharedHomePlatforms extends Struct.ComponentSchema {
     displayName: 'home_platforms';
   };
   attributes: {
+    col_1_img: Schema.Attribute.Media<'images'>;
     col_1_subtitle: Schema.Attribute.String;
     col_1_title: Schema.Attribute.String;
+    col_2_img: Schema.Attribute.Media<'images'>;
     col_2_subtitle: Schema.Attribute.String;
     col_2_title: Schema.Attribute.String;
     section_title: Schema.Attribute.String;
@@ -847,11 +982,21 @@ declare module '@strapi/strapi' {
       'shared.ctr-sec-v1': SharedCtrSecV1;
       'shared.economy-item': SharedEconomyItem;
       'shared.economy-sec': SharedEconomySec;
+      'shared.exchange-calc-citys': SharedExchangeCalcCitys;
+      'shared.exchange-calc-country': SharedExchangeCalcCountry;
+      'shared.exchange-calc-data': SharedExchangeCalcData;
+      'shared.exchange-calc-sec': SharedExchangeCalcSec;
+      'shared.exchange-culc-give-item': SharedExchangeCulcGiveItem;
+      'shared.exchange-culc-invoice-data': SharedExchangeCulcInvoiceData;
+      'shared.exchange-culc-invoice-states': SharedExchangeCulcInvoiceStates;
+      'shared.exchange-culc-invoice-type': SharedExchangeCulcInvoiceType;
+      'shared.exchange-culc-pair': SharedExchangeCulcPair;
       'shared.exchange-hero-sec': SharedExchangeHeroSec;
       'shared.exchange-staps-element': SharedExchangeStapsElement;
       'shared.exchange-staps-sec': SharedExchangeStapsSec;
       'shared.faq-sec': SharedFaqSec;
       'shared.footer-contact-item': SharedFooterContactItem;
+      'shared.form-country': SharedFormCountry;
       'shared.header-contacts': SharedHeaderContacts;
       'shared.home-hero': SharedHomeHero;
       'shared.home-hero-card-item': SharedHomeHeroCardItem;

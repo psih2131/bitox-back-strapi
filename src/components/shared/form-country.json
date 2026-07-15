@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_form_countries",
+  "info": {
+    "displayName": "form_country"
+  },
+  "options": {},
+  "attributes": {
+    "flag": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_exchange_calc_citys",
+  "info": {
+    "displayName": "exchange_calc_citys"
+  },
+  "options": {},
+  "attributes": {
+    "city_name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

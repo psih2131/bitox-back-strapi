@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "exchange_calc_components",
+  "info": {
+    "singularName": "exchange-calc-component",
+    "pluralName": "exchange-calc-components",
+    "displayName": "_exchange_calc_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "calc": {
+      "type": "component",
+      "component": "shared.exchange-calc-sec",
+      "repeatable": false
+    }
+  }
+}

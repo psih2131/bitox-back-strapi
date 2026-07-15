@@ -14,11 +14,25 @@
     "col_1_subtitle": {
       "type": "string"
     },
+    "col_1_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "col_2_title": {
       "type": "string"
     },
     "col_2_subtitle": {
       "type": "string"
+    },
+    "col_2_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}
