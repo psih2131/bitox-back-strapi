@@ -26,11 +26,6 @@
       "component": "shared.countries-sec",
       "repeatable": false
     },
-    "home_benefits_sec": {
-      "type": "component",
-      "component": "shared.benefits-sec",
-      "repeatable": false
-    },
     "home_media_about_us": {
       "type": "component",
       "component": "shared.media-about-us-sec",

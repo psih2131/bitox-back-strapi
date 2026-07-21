@@ -1106,7 +1106,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    home_benefits_sec: Schema.Attribute.Component<'shared.benefits-sec', false>;
     home_countries_sec: Schema.Attribute.Component<
       'shared.countries-sec',
       false
@@ -1567,6 +1566,10 @@ export interface ApiTransfersPageTransfersPage
       'api::transfers-page.transfers-page'
     > &
       Schema.Attribute.Private;
+    nav_meny_title_export: Schema.Attribute.String;
+    nav_meny_title_import: Schema.Attribute.String;
+    nav_meny_title_individual: Schema.Attribute.String;
+    nav_meny_title_transfers: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     service_county_sec_v2: Schema.Attribute.Component<

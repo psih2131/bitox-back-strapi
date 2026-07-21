@@ -78,6 +78,7 @@ export interface SharedBenefitsSec extends Struct.ComponentSchema {
   };
   attributes: {
     benefits_items: Schema.Attribute.Component<'shared.benefit-item', true>;
+    image_for_box_2: Schema.Attribute.Media<'images'>;
     title_section: Schema.Attribute.String;
   };
 }
@@ -126,6 +127,17 @@ export interface SharedClientsUseElement extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContactTgUsers extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contact_tg_users';
+  info: {
+    displayName: 'contact_tg_users';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedContactsHeroSec extends Struct.ComponentSchema {
   collectionName: 'components_shared_contacts_hero_secs';
   info: {
@@ -137,6 +149,7 @@ export interface SharedContactsHeroSec extends Struct.ComponentSchema {
     telegram_subtitle: Schema.Attribute.String;
     telegram_subtitle_2: Schema.Attribute.String;
     telegram_title: Schema.Attribute.String;
+    tg_users: Schema.Attribute.Component<'shared.contact-tg-users', true>;
     title: Schema.Attribute.Text;
   };
 }
@@ -975,6 +988,7 @@ declare module '@strapi/strapi' {
       'shared.benefits-sec-v2': SharedBenefitsSecV2;
       'shared.clients-use': SharedClientsUse;
       'shared.clients-use-element': SharedClientsUseElement;
+      'shared.contact-tg-users': SharedContactTgUsers;
       'shared.contacts-hero-sec': SharedContactsHeroSec;
       'shared.contacts-sec': SharedContactsSec;
       'shared.countries-sec': SharedCountriesSec;

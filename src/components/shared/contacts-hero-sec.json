@@ -27,6 +27,11 @@
     },
     "telegram_subtitle_2": {
       "type": "string"
+    },
+    "tg_users": {
+      "type": "component",
+      "component": "shared.contact-tg-users",
+      "repeatable": true
     }
   },
   "config": {}

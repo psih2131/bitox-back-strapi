@@ -91,6 +91,18 @@
     "add_to_nav_menu_export": {
       "type": "boolean",
       "default": false
+    },
+    "nav_meny_title_individual": {
+      "type": "string"
+    },
+    "nav_meny_title_import": {
+      "type": "string"
+    },
+    "nav_meny_title_export": {
+      "type": "string"
+    },
+    "nav_meny_title_transfers": {
+      "type": "string"
     }
   }
 }

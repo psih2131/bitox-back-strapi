@@ -12,6 +12,13 @@
       "type": "component",
       "component": "shared.benefit-item",
       "repeatable": true
+    },
+    "image_for_box_2": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}
