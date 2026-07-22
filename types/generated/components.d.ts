@@ -501,6 +501,8 @@ export interface SharedHowBePartners extends Struct.ComponentSchema {
     card_title_2: Schema.Attribute.String;
     card_title_3: Schema.Attribute.String;
     card_title_4: Schema.Attribute.String;
+    image_for_box_2: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
     section_title: Schema.Attribute.String;
   };
 }

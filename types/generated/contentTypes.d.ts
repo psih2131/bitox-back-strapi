@@ -785,7 +785,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     >;
     contacts_hero_sec: Schema.Attribute.Component<
       'shared.contacts-hero-sec',
-      false
+      true
     >;
     contacts_map_sec: Schema.Attribute.Component<'shared.contacts-sec', false>;
     createdAt: Schema.Attribute.DateTime;
@@ -1013,6 +1013,40 @@ export interface ApiFooterComponentFooterComponent
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormRequestFormRequest extends Struct.CollectionTypeSchema {
+  collectionName: 'form_requests';
+  info: {
+    displayName: '_form_requests';
+    pluralName: 'form-requests';
+    singularName: 'form-request';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::form-request.form-request'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    text_1: Schema.Attribute.String;
+    text_2: Schema.Attribute.String;
+    text_3: Schema.Attribute.String;
+    title_form: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url_page: Schema.Attribute.String;
   };
 }
 
@@ -2134,6 +2168,7 @@ declare module '@strapi/strapi' {
       'api::exchange-page.exchange-page': ApiExchangePageExchangePage;
       'api::exchange.exchange': ApiExchangeExchange;
       'api::footer-component.footer-component': ApiFooterComponentFooterComponent;
+      'api::form-request.form-request': ApiFormRequestFormRequest;
       'api::global-info.global-info': ApiGlobalInfoGlobalInfo;
       'api::header-component.header-component': ApiHeaderComponentHeaderComponent;
       'api::home.home': ApiHomeHome;

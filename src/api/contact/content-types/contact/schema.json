@@ -14,7 +14,7 @@
     "contacts_hero_sec": {
       "type": "component",
       "component": "shared.contacts-hero-sec",
-      "repeatable": false
+      "repeatable": true
     },
     "contacts_map_sec": {
       "type": "component",

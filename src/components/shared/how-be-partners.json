@@ -31,6 +31,14 @@
     },
     "card_text_4": {
       "type": "text"
+    },
+    "image_for_box_2": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}
