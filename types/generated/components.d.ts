@@ -105,6 +105,19 @@ export interface SharedBenefitsSecV2 extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedChoiceItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_choice_items';
+  info: {
+    displayName: 'choice_item';
+  };
+  attributes: {
+    title_row: Schema.Attribute.String;
+    value_banks: Schema.Attribute.Text;
+    value_bitox: Schema.Attribute.Text;
+    value_other: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedClientsUse extends Struct.ComponentSchema {
   collectionName: 'components_shared_clients_uses';
   info: {
@@ -988,6 +1001,7 @@ declare module '@strapi/strapi' {
       'shared.benefit-item-list': SharedBenefitItemList;
       'shared.benefits-sec': SharedBenefitsSec;
       'shared.benefits-sec-v2': SharedBenefitsSecV2;
+      'shared.choice-item': SharedChoiceItem;
       'shared.clients-use': SharedClientsUse;
       'shared.clients-use-element': SharedClientsUseElement;
       'shared.contact-tg-users': SharedContactTgUsers;

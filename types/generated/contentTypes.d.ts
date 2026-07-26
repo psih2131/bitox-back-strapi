@@ -768,6 +768,36 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiChoiseComponentChoiseComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'choise_components';
+  info: {
+    displayName: '_choise_component';
+    pluralName: 'choise-components';
+    singularName: 'choise-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::choise-component.choise-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    table_row: Schema.Attribute.Component<'shared.choice-item', true>;
+    title_section: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
@@ -2161,6 +2191,7 @@ declare module '@strapi/strapi' {
       'api::business-page.business-page': ApiBusinessPageBusinessPage;
       'api::business.business': ApiBusinessBusiness;
       'api::category.category': ApiCategoryCategory;
+      'api::choise-component.choise-component': ApiChoiseComponentChoiseComponent;
       'api::contact.contact': ApiContactContact;
       'api::docs-page.docs-page': ApiDocsPageDocsPage;
       'api::economy-component.economy-component': ApiEconomyComponentEconomyComponent;

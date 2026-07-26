@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_choice_items",
+  "info": {
+    "displayName": "choice_item"
+  },
+  "options": {},
+  "attributes": {
+    "title_row": {
+      "type": "string"
+    },
+    "value_bitox": {
+      "type": "text"
+    },
+    "value_banks": {
+      "type": "text"
+    },
+    "value_other": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

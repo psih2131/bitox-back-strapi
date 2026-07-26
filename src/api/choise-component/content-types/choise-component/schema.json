@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "choise_components",
+  "info": {
+    "singularName": "choise-component",
+    "pluralName": "choise-components",
+    "displayName": "_choise_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_section": {
+      "type": "string"
+    },
+    "table_row": {
+      "type": "component",
+      "component": "shared.choice-item",
+      "repeatable": true
+    }
+  }
+}
