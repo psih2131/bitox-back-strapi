@@ -1100,6 +1100,7 @@ export interface ApiGlobalInfoGlobalInfo extends Struct.SingleTypeSchema {
       'api::global-info.global-info'
     > &
       Schema.Attribute.Private;
+    modal_30_sec: Schema.Attribute.Component<'shared.modal-30-sec', false>;
     publishedAt: Schema.Attribute.DateTime;
     reviews_counter_text: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

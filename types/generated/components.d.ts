@@ -671,6 +671,21 @@ export interface SharedMediaAboutUsSec extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedModal30Sec extends Struct.ComponentSchema {
+  collectionName: 'components_shared_modal_30_secs';
+  info: {
+    displayName: 'modal_30_sec';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    phone: Schema.Attribute.String;
+    phone_link: Schema.Attribute.String;
+    telegram_link: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedOffersBannerItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_offers_banner_items';
   info: {
@@ -1044,6 +1059,7 @@ declare module '@strapi/strapi' {
       'shared.media': SharedMedia;
       'shared.media-about-item': SharedMediaAboutItem;
       'shared.media-about-us-sec': SharedMediaAboutUsSec;
+      'shared.modal-30-sec': SharedModal30Sec;
       'shared.offers-banner-item': SharedOffersBannerItem;
       'shared.offers-banner-sec': SharedOffersBannerSec;
       'shared.office-list': SharedOfficeList;

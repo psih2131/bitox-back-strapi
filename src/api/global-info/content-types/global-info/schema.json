@@ -13,6 +13,11 @@
   "attributes": {
     "reviews_counter_text": {
       "type": "string"
+    },
+    "modal_30_sec": {
+      "type": "component",
+      "component": "shared.modal-30-sec",
+      "repeatable": false
     }
   }
 }
