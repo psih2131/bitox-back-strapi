@@ -1069,14 +1069,14 @@ export interface ApiFormRequestFormRequest extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    text_1: Schema.Attribute.String;
-    text_2: Schema.Attribute.String;
-    text_3: Schema.Attribute.String;
+    text_1: Schema.Attribute.Text;
+    text_2: Schema.Attribute.Text;
+    text_3: Schema.Attribute.Text;
     title_form: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url_page: Schema.Attribute.String;
+    url_page: Schema.Attribute.Text;
   };
 }
 

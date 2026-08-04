@@ -15,7 +15,7 @@
       "type": "string"
     },
     "url_page": {
-      "type": "string"
+      "type": "text"
     },
     "name": {
       "type": "string"
@@ -24,13 +24,13 @@
       "type": "string"
     },
     "text_1": {
-      "type": "string"
+      "type": "text"
     },
     "text_2": {
-      "type": "string"
+      "type": "text"
     },
     "text_3": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
