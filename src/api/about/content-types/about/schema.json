@@ -41,6 +41,11 @@
       "type": "component",
       "component": "shared.offices-sec",
       "repeatable": false
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
