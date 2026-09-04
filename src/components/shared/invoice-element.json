@@ -24,6 +24,9 @@
       "type": "component",
       "component": "shared.invoice-element-list",
       "repeatable": true
+    },
+    "page_link": {
+      "type": "string"
     }
   },
   "config": {}

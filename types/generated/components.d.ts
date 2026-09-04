@@ -577,6 +577,7 @@ export interface SharedInvoiceElement extends Struct.ComponentSchema {
       true
     >;
     invoice_image: Schema.Attribute.Media<'images' | 'files'>;
+    page_link: Schema.Attribute.String;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
