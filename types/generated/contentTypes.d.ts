@@ -1271,6 +1271,66 @@ export interface ApiIndividualsPageIndividualsPage
   };
 }
 
+export interface ApiIndividualsSinglIndividualsSingl
+  extends Struct.SingleTypeSchema {
+  collectionName: 'individuals_singls';
+  info: {
+    displayName: 'Individuals-singl';
+    pluralName: 'individuals-singls';
+    singularName: 'individuals-singl';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::individuals-singl.individuals-singl'
+    > &
+      Schema.Attribute.Private;
+    preview_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_county_sec_v2: Schema.Attribute.Component<
+      'shared.countries-sec-v2',
+      false
+    >;
+    service_economy_sec: Schema.Attribute.Component<
+      'shared.economy-sec',
+      false
+    >;
+    service_hero_sec: Schema.Attribute.Component<'shared.service-hero', false>;
+    service_media_about_us_sec: Schema.Attribute.Component<
+      'shared.media-about-us-sec',
+      false
+    >;
+    services_benefits_sec: Schema.Attribute.Component<
+      'shared.benefits-sec',
+      false
+    >;
+    services_faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    services_invoice_example_sec: Schema.Attribute.Component<
+      'shared.invoice-example-sec',
+      false
+    >;
+    services_invoice_sec: Schema.Attribute.Component<
+      'shared.invoice-sec',
+      false
+    >;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInvoiceSinglInvoiceSingl extends Struct.SingleTypeSchema {
   collectionName: 'invoice_singls';
   info: {
@@ -2207,6 +2267,7 @@ declare module '@strapi/strapi' {
       'api::header-component.header-component': ApiHeaderComponentHeaderComponent;
       'api::home.home': ApiHomeHome;
       'api::individuals-page.individuals-page': ApiIndividualsPageIndividualsPage;
+      'api::individuals-singl.individuals-singl': ApiIndividualsSinglIndividualsSingl;
       'api::invoice-singl.invoice-singl': ApiInvoiceSinglInvoiceSingl;
       'api::invoice.invoice': ApiInvoiceInvoice;
       'api::partnership.partnership': ApiPartnershipPartnership;
