@@ -18,6 +18,9 @@
       "type": "component",
       "component": "shared.modal-30-sec",
       "repeatable": false
+    },
+    "telegram_bot_user_name": {
+      "type": "string"
     }
   }
 }

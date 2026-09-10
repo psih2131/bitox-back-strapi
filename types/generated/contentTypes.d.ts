@@ -1105,6 +1105,7 @@ export interface ApiGlobalInfoGlobalInfo extends Struct.SingleTypeSchema {
     modal_30_sec: Schema.Attribute.Component<'shared.modal-30-sec', false>;
     publishedAt: Schema.Attribute.DateTime;
     reviews_counter_text: Schema.Attribute.String;
+    telegram_bot_user_name: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1440,6 +1441,44 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLeadAnalyticLeadAnalytic
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'lead_analytics';
+  info: {
+    displayName: '_lead_analytics';
+    pluralName: 'lead-analytics';
+    singularName: 'lead-analytic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    landing_url: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lead-analytic.lead-analytic'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    referrer: Schema.Attribute.Text;
+    token: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    utm_campaign: Schema.Attribute.String;
+    utm_content: Schema.Attribute.String;
+    utm_medium: Schema.Attribute.String;
+    utm_sourse: Schema.Attribute.String;
+    utm_term: Schema.Attribute.String;
+    yclid: Schema.Attribute.String;
+    ym_client_id: Schema.Attribute.String;
   };
 }
 
@@ -2270,6 +2309,7 @@ declare module '@strapi/strapi' {
       'api::individuals-singl.individuals-singl': ApiIndividualsSinglIndividualsSingl;
       'api::invoice-singl.invoice-singl': ApiInvoiceSinglInvoiceSingl;
       'api::invoice.invoice': ApiInvoiceInvoice;
+      'api::lead-analytic.lead-analytic': ApiLeadAnalyticLeadAnalytic;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::review.review': ApiReviewReview;
       'api::reviews-category.reviews-category': ApiReviewsCategoryReviewsCategory;

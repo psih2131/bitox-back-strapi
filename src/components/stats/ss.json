@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_stats_sses",
+  "info": {
+    "displayName": "ss"
+  },
+  "options": {},
+  "attributes": {
+    "hh": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

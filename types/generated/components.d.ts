@@ -1006,6 +1006,16 @@ export interface SharedTextEditor extends Struct.ComponentSchema {
   };
 }
 
+export interface StatsSs extends Struct.ComponentSchema {
+  collectionName: 'components_stats_sses';
+  info: {
+    displayName: 'ss';
+  };
+  attributes: {
+    hh: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -1087,6 +1097,7 @@ declare module '@strapi/strapi' {
       'shared.stats-sec': SharedStatsSec;
       'shared.team-sec': SharedTeamSec;
       'shared.text-editor': SharedTextEditor;
+      'stats.ss': StatsSs;
     }
   }
 }
