@@ -15,6 +15,10 @@
       "type": "string",
       "required": true
     },
+    "title_mutation": {
+      "type": "string",
+      "required": true
+    },
     "slug": {
       "type": "uid",
       "targetField": "title",
@@ -76,6 +80,12 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "invoices_pages_region": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::invoices-pages-region.invoices-pages-region",
+      "inversedBy": "invoices_pages"
     }
   }
 }

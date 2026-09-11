@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "invoice_process_components",
+  "info": {
+    "singularName": "invoice-process-component",
+    "pluralName": "invoice-process-components",
+    "displayName": "_invoice_process_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_base_title": {
+      "type": "string"
+    },
+    "section_subtitle": {
+      "type": "string"
+    },
+    "process_item": {
+      "type": "component",
+      "component": "section-items.invoice-process-item",
+      "repeatable": true
+    }
+  }
+}

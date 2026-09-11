@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_section_items_invoice_process_items",
+  "info": {
+    "displayName": "invoice_process_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

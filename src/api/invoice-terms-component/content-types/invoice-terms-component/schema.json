@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "invoice_terms_components",
+  "info": {
+    "singularName": "invoice-terms-component",
+    "pluralName": "invoice-terms-components",
+    "displayName": "_invoice_terms_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_section": {
+      "type": "string"
+    },
+    "term_items": {
+      "type": "component",
+      "component": "section-items.invoice-term-item",
+      "repeatable": true
+    }
+  }
+}

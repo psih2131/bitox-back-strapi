@@ -1,5 +1,27 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SectionItemsInvoiceProcessItem extends Struct.ComponentSchema {
+  collectionName: 'components_section_items_invoice_process_items';
+  info: {
+    displayName: 'invoice_process_item';
+  };
+  attributes: {
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionItemsInvoiceTermItem extends Struct.ComponentSchema {
+  collectionName: 'components_section_items_invoice_term_items';
+  info: {
+    displayName: 'invoice_term_item';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedAboutAboutSec extends Struct.ComponentSchema {
   collectionName: 'components_shared_about_about_secs';
   info: {
@@ -1019,6 +1041,8 @@ export interface StatsSs extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'section-items.invoice-process-item': SectionItemsInvoiceProcessItem;
+      'section-items.invoice-term-item': SectionItemsInvoiceTermItem;
       'shared.about-about-sec': SharedAboutAboutSec;
       'shared.about-gallery-sec': SharedAboutGallerySec;
       'shared.about-hero-box-list': SharedAboutHeroBoxList;

@@ -1332,6 +1332,40 @@ export interface ApiIndividualsSinglIndividualsSingl
   };
 }
 
+export interface ApiInvoiceProcessComponentInvoiceProcessComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'invoice_process_components';
+  info: {
+    displayName: '_invoice_process_component';
+    pluralName: 'invoice-process-components';
+    singularName: 'invoice-process-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice-process-component.invoice-process-component'
+    > &
+      Schema.Attribute.Private;
+    process_item: Schema.Attribute.Component<
+      'section-items.invoice-process-item',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    section_base_title: Schema.Attribute.String;
+    section_subtitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInvoiceSinglInvoiceSingl extends Struct.SingleTypeSchema {
   collectionName: 'invoice_singls';
   info: {
@@ -1386,6 +1420,39 @@ export interface ApiInvoiceSinglInvoiceSingl extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiInvoiceTermsComponentInvoiceTermsComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'invoice_terms_components';
+  info: {
+    displayName: '_invoice_terms_component';
+    pluralName: 'invoice-terms-components';
+    singularName: 'invoice-terms-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice-terms-component.invoice-terms-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    term_items: Schema.Attribute.Component<
+      'section-items.invoice-term-item',
+      true
+    >;
+    title_section: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
   collectionName: 'invoices';
   info: {
@@ -1401,6 +1468,10 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     flag: Schema.Attribute.Media<'images' | 'files'>;
+    invoices_pages_region: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::invoices-pages-region.invoices-pages-region'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1438,6 +1509,41 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    title_mutation: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInvoicesPagesRegionInvoicesPagesRegion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'invoices_pages_regions';
+  info: {
+    displayName: 'Invoices_pages_regions';
+    pluralName: 'invoices-pages-regions';
+    singularName: 'invoices-pages-region';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    invoices_pages: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice.invoice'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoices-pages-region.invoices-pages-region'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2307,8 +2413,11 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::individuals-page.individuals-page': ApiIndividualsPageIndividualsPage;
       'api::individuals-singl.individuals-singl': ApiIndividualsSinglIndividualsSingl;
+      'api::invoice-process-component.invoice-process-component': ApiInvoiceProcessComponentInvoiceProcessComponent;
       'api::invoice-singl.invoice-singl': ApiInvoiceSinglInvoiceSingl;
+      'api::invoice-terms-component.invoice-terms-component': ApiInvoiceTermsComponentInvoiceTermsComponent;
       'api::invoice.invoice': ApiInvoiceInvoice;
+      'api::invoices-pages-region.invoices-pages-region': ApiInvoicesPagesRegionInvoicesPagesRegion;
       'api::lead-analytic.lead-analytic': ApiLeadAnalyticLeadAnalytic;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::review.review': ApiReviewReview;

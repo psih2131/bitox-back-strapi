@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices_pages_regions",
+  "info": {
+    "singularName": "invoices-pages-region",
+    "pluralName": "invoices-pages-regions",
+    "displayName": "Invoices_pages_regions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "invoices_pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invoice.invoice",
+      "mappedBy": "invoices_pages_region"
+    }
+  }
+}
