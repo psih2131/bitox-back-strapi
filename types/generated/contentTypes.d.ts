@@ -1728,6 +1728,64 @@ export interface ApiStatsComponentStatsComponent
   };
 }
 
+export interface ApiStatsInvoiceComponentStatsInvoiceComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'stats_invoice_components';
+  info: {
+    displayName: '_stats_invoice_component';
+    pluralName: 'stats-invoice-components';
+    singularName: 'stats-invoice-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stats-invoice-component.stats-invoice-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    stats_section: Schema.Attribute.Component<'shared.stats-sec', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStatsTransfersComponentStatsTransfersComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'stats_transfers_components';
+  info: {
+    displayName: '_stats_transfers_component';
+    pluralName: 'stats-transfers-components';
+    singularName: 'stats-transfers-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stats-transfers-component.stats-transfers-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    stats_section: Schema.Attribute.Component<'shared.stats-sec', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
   collectionName: 'teams';
   info: {
@@ -1873,6 +1931,7 @@ export interface ApiTransfersPageTransfersPage
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    title_mutation: Schema.Attribute.String;
     title_nav_meny: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2423,6 +2482,8 @@ declare module '@strapi/strapi' {
       'api::review.review': ApiReviewReview;
       'api::reviews-category.reviews-category': ApiReviewsCategoryReviewsCategory;
       'api::stats-component.stats-component': ApiStatsComponentStatsComponent;
+      'api::stats-invoice-component.stats-invoice-component': ApiStatsInvoiceComponentStatsInvoiceComponent;
+      'api::stats-transfers-component.stats-transfers-component': ApiStatsTransfersComponentStatsTransfersComponent;
       'api::team.team': ApiTeamTeam;
       'api::transfer.transfer': ApiTransferTransfer;
       'api::transfers-page.transfers-page': ApiTransfersPageTransfersPage;

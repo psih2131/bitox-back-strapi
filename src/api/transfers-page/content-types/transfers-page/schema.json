@@ -18,6 +18,9 @@
     "title_nav_meny": {
       "type": "string"
     },
+    "title_mutation": {
+      "type": "string"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title",

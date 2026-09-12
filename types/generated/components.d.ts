@@ -990,6 +990,8 @@ export interface SharedStatsElement extends Struct.ComponentSchema {
     displayName: 'stats_element';
   };
   attributes: {
+    add_country_to_end_text: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };

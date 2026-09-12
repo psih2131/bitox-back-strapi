@@ -10,6 +10,10 @@
     },
     "subtitle": {
       "type": "text"
+    },
+    "add_country_to_end_text": {
+      "type": "boolean",
+      "default": false
     }
   },
   "config": {}

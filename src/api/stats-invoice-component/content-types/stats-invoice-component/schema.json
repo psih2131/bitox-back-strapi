@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "stats_invoice_components",
+  "info": {
+    "singularName": "stats-invoice-component",
+    "pluralName": "stats-invoice-components",
+    "displayName": "_stats_invoice_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stats_section": {
+      "type": "component",
+      "component": "shared.stats-sec",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "stats_transfers_components",
+  "info": {
+    "singularName": "stats-transfers-component",
+    "pluralName": "stats-transfers-components",
+    "displayName": "_stats_transfers_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stats_section": {
+      "type": "component",
+      "component": "shared.stats-sec",
+      "repeatable": false
+    }
+  }
+}
