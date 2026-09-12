@@ -1,5 +1,15 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SectionItemsCityItem extends Struct.ComponentSchema {
+  collectionName: 'components_section_items_city_items';
+  info: {
+    displayName: 'city_item';
+  };
+  attributes: {
+    name_city: Schema.Attribute.String;
+  };
+}
+
 export interface SectionItemsInvoiceProcessItem extends Struct.ComponentSchema {
   collectionName: 'components_section_items_invoice_process_items';
   info: {
@@ -17,6 +27,19 @@ export interface SectionItemsInvoiceTermItem extends Struct.ComponentSchema {
     displayName: 'invoice_term_item';
   };
   attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionItemsTransferStap extends Struct.ComponentSchema {
+  collectionName: 'components_section_items_transfer_staps';
+  info: {
+    displayName: 'transfer_stap';
+  };
+  attributes: {
+    add_country_to_end_text: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -1043,8 +1066,10 @@ export interface StatsSs extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'section-items.city-item': SectionItemsCityItem;
       'section-items.invoice-process-item': SectionItemsInvoiceProcessItem;
       'section-items.invoice-term-item': SectionItemsInvoiceTermItem;
+      'section-items.transfer-stap': SectionItemsTransferStap;
       'shared.about-about-sec': SharedAboutAboutSec;
       'shared.about-gallery-sec': SharedAboutGallerySec;
       'shared.about-hero-box-list': SharedAboutHeroBoxList;

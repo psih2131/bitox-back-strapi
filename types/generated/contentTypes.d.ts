@@ -1629,6 +1629,40 @@ export interface ApiPartnershipPartnership extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiProcessTransferComponentProcessTransferComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'process_transfer_components';
+  info: {
+    displayName: '_process_transfer_component';
+    pluralName: 'process-transfer-components';
+    singularName: 'process-transfer-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button_text: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::process-transfer-component.process-transfer-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    section_title: Schema.Attribute.String;
+    transfer_stap_item: Schema.Attribute.Component<
+      'section-items.transfer-stap',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiReviewReview extends Struct.CollectionTypeSchema {
   collectionName: 'reviews';
   info: {
@@ -1886,6 +1920,7 @@ export interface ApiTransfersPageTransfersPage
       Schema.Attribute.DefaultTo<false>;
     add_to_nav_menu_individual: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
+    country_cities: Schema.Attribute.Component<'section-items.city-item', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2479,6 +2514,7 @@ declare module '@strapi/strapi' {
       'api::invoices-pages-region.invoices-pages-region': ApiInvoicesPagesRegionInvoicesPagesRegion;
       'api::lead-analytic.lead-analytic': ApiLeadAnalyticLeadAnalytic;
       'api::partnership.partnership': ApiPartnershipPartnership;
+      'api::process-transfer-component.process-transfer-component': ApiProcessTransferComponentProcessTransferComponent;
       'api::review.review': ApiReviewReview;
       'api::reviews-category.reviews-category': ApiReviewsCategoryReviewsCategory;
       'api::stats-component.stats-component': ApiStatsComponentStatsComponent;
