@@ -12,6 +12,7 @@
   "pluginOptions": {},
   "attributes": {
     "stats_section": {
+      
       "type": "component",
       "component": "shared.stats-sec",
       "repeatable": false
