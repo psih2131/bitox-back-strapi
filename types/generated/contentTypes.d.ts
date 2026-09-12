@@ -1968,6 +1968,44 @@ export interface ApiTransfersPageTransfersPage
     title: Schema.Attribute.String & Schema.Attribute.Required;
     title_mutation: Schema.Attribute.String;
     title_nav_meny: Schema.Attribute.String;
+    transfers_pages_region: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::transfers-pages-region.transfers-pages-region'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTransfersPagesRegionTransfersPagesRegion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'transfers_pages_regions';
+  info: {
+    displayName: 'Transfers_pages_regions';
+    pluralName: 'transfers-pages-regions';
+    singularName: 'transfers-pages-region';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::transfers-pages-region.transfers-pages-region'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+    transfers_pages: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::transfers-page.transfers-page'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2523,6 +2561,7 @@ declare module '@strapi/strapi' {
       'api::team.team': ApiTeamTeam;
       'api::transfer.transfer': ApiTransferTransfer;
       'api::transfers-page.transfers-page': ApiTransfersPageTransfersPage;
+      'api::transfers-pages-region.transfers-pages-region': ApiTransfersPagesRegionTransfersPagesRegion;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

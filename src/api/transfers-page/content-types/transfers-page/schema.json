@@ -111,6 +111,12 @@
       "type": "component",
       "component": "section-items.city-item",
       "repeatable": true
+    },
+    "transfers_pages_region": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::transfers-pages-region.transfers-pages-region",
+      "inversedBy": "transfers_pages"
     }
   }
 }

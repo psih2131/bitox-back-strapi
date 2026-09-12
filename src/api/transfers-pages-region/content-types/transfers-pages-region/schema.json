@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transfers_pages_regions",
+  "info": {
+    "singularName": "transfers-pages-region",
+    "pluralName": "transfers-pages-regions",
+    "displayName": "Transfers_pages_regions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "transfers_pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transfers-page.transfers-page",
+      "mappedBy": "transfers_pages_region"
+    }
+  }
+}
