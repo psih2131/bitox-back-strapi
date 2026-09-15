@@ -726,7 +726,6 @@ export interface SharedModal30Sec extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     phone: Schema.Attribute.String;
     phone_link: Schema.Attribute.String;
-    telegram_link: Schema.Attribute.String;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };

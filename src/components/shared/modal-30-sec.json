@@ -11,9 +11,6 @@
     "text": {
       "type": "text"
     },
-    "telegram_link": {
-      "type": "string"
-    },
     "phone": {
       "type": "string"
     },
