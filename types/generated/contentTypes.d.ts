@@ -1521,7 +1521,7 @@ export interface ApiLeadAnalyticLeadAnalytic
     utm_campaign: Schema.Attribute.String;
     utm_content: Schema.Attribute.String;
     utm_medium: Schema.Attribute.String;
-    utm_sourse: Schema.Attribute.String;
+    utm_source: Schema.Attribute.String;
     utm_term: Schema.Attribute.String;
     yclid: Schema.Attribute.String;
     ym_client_id: Schema.Attribute.String;

@@ -14,7 +14,7 @@
     "token": {
       "type": "string"
     },
-    "utm_sourse": {
+    "utm_source": {
       "type": "string"
     },
     "utm_medium": {
