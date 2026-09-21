@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "transfers_faq_components",
+  "info": {
+    "singularName": "transfers-faq-component",
+    "pluralName": "transfers-faq-components",
+    "displayName": "_transfers_faq_component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faq_sec": {
+      "type": "component",
+      "component": "shared.faq-sec",
+      "repeatable": false
+    }
+  }
+}

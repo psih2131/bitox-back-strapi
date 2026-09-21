@@ -1272,6 +1272,34 @@ export interface ApiIndividualsPageIndividualsPage
   };
 }
 
+export interface ApiInvoiceFaqInvoiceFaq extends Struct.SingleTypeSchema {
+  collectionName: 'invoice_faqs';
+  info: {
+    displayName: '_invoice_faq_component';
+    pluralName: 'invoice-faqs';
+    singularName: 'invoice-faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice-faq.invoice-faq'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInvoiceProcessComponentInvoiceProcessComponent
   extends Struct.SingleTypeSchema {
   collectionName: 'invoice_process_components';
@@ -1836,6 +1864,35 @@ export interface ApiTransferTransfer extends Struct.SingleTypeSchema {
       'shared.invoice-sec',
       false
     >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTransfersFaqComponentTransfersFaqComponent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'transfers_faq_components';
+  info: {
+    displayName: '_transfers_faq_component';
+    pluralName: 'transfers-faq-components';
+    singularName: 'transfers-faq-component';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq_sec: Schema.Attribute.Component<'shared.faq-sec', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::transfers-faq-component.transfers-faq-component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2484,6 +2541,7 @@ declare module '@strapi/strapi' {
       'api::header-component.header-component': ApiHeaderComponentHeaderComponent;
       'api::home.home': ApiHomeHome;
       'api::individuals-page.individuals-page': ApiIndividualsPageIndividualsPage;
+      'api::invoice-faq.invoice-faq': ApiInvoiceFaqInvoiceFaq;
       'api::invoice-process-component.invoice-process-component': ApiInvoiceProcessComponentInvoiceProcessComponent;
       'api::invoice-singl.invoice-singl': ApiInvoiceSinglInvoiceSingl;
       'api::invoice-terms-component.invoice-terms-component': ApiInvoiceTermsComponentInvoiceTermsComponent;
@@ -2499,6 +2557,7 @@ declare module '@strapi/strapi' {
       'api::stats-transfers-component.stats-transfers-component': ApiStatsTransfersComponentStatsTransfersComponent;
       'api::team.team': ApiTeamTeam;
       'api::transfer.transfer': ApiTransferTransfer;
+      'api::transfers-faq-component.transfers-faq-component': ApiTransfersFaqComponentTransfersFaqComponent;
       'api::transfers-page.transfers-page': ApiTransfersPageTransfersPage;
       'api::transfers-pages-region.transfers-pages-region': ApiTransfersPagesRegionTransfersPagesRegion;
       'plugin::content-releases.release': PluginContentReleasesRelease;
