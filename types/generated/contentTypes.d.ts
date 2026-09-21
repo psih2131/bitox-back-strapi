@@ -1224,6 +1224,7 @@ export interface ApiIndividualsPageIndividualsPage
     draftAndPublish: true;
   };
   attributes: {
+    calculator_title: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -37,6 +37,9 @@
       "component": "shared.service-hero",
       "repeatable": false
     },
+    "calculator_title": {
+      "type": "string"
+    },
     "services_invoice_sec": {
       "type": "component",
       "component": "shared.invoice-sec",
