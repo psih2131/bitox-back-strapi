@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_choice_secs",
+  "info": {
+    "displayName": "choice_sec"
+  },
+  "options": {},
+  "attributes": {
+    "title_section": {
+      "type": "string"
+    },
+    "table_row": {
+      "type": "component",
+      "component": "shared.choice-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

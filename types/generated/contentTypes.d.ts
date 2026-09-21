@@ -1225,6 +1225,7 @@ export interface ApiIndividualsPageIndividualsPage
   };
   attributes: {
     calculator_title: Schema.Attribute.String;
+    choice_section: Schema.Attribute.Component<'sections.choice-sec', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

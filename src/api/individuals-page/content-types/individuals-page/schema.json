@@ -50,6 +50,11 @@
       "component": "shared.economy-sec",
       "repeatable": false
     },
+    "choice_section": {
+      "type": "component",
+      "component": "sections.choice-sec",
+      "repeatable": false
+    },
     "services_benefits_sec": {
       "type": "component",
       "component": "shared.benefits-sec",

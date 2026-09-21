@@ -45,6 +45,17 @@ export interface SectionItemsTransferStap extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsChoiceSec extends Struct.ComponentSchema {
+  collectionName: 'components_sections_choice_secs';
+  info: {
+    displayName: 'choice_sec';
+  };
+  attributes: {
+    table_row: Schema.Attribute.Component<'shared.choice-item', true>;
+    title_section: Schema.Attribute.String;
+  };
+}
+
 export interface SharedAboutAboutSec extends Struct.ComponentSchema {
   collectionName: 'components_shared_about_about_secs';
   info: {
@@ -1069,6 +1080,7 @@ declare module '@strapi/strapi' {
       'section-items.invoice-process-item': SectionItemsInvoiceProcessItem;
       'section-items.invoice-term-item': SectionItemsInvoiceTermItem;
       'section-items.transfer-stap': SectionItemsTransferStap;
+      'sections.choice-sec': SectionsChoiceSec;
       'shared.about-about-sec': SharedAboutAboutSec;
       'shared.about-gallery-sec': SharedAboutGallerySec;
       'shared.about-hero-box-list': SharedAboutHeroBoxList;
