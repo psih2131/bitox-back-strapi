@@ -1965,7 +1965,6 @@ export interface ApiTransfersPageTransfersPage
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    title_mutation: Schema.Attribute.String;
     title_nav_meny: Schema.Attribute.String;
     transfers_pages_region: Schema.Attribute.Relation<
       'manyToOne',
