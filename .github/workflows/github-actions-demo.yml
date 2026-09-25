@@ -18,8 +18,9 @@ jobs:
           script: |
             set -e
             cd /root/opt/bitox-back-strapi
-            git pull
+            git fetch origin main
+            git reset --hard origin/main
+            npm i     
             git restore package-lock.json
-            npm install
-            npm run build
+            # дальше build/restart strapi как у вас
             pm2 restart bitox-strapi
