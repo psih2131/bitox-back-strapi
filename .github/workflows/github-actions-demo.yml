@@ -16,8 +16,10 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -e
             cd /root/opt/bitox-back-strapi
             git pull
+            git restore package-lock.json
             npm install
             npm run build
             pm2 restart bitox-strapi
