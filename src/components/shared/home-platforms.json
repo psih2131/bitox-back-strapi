@@ -21,6 +21,11 @@
         "images"
       ]
     },
+    "col_1_links": {
+      "type": "component",
+      "component": "shared.home-platform-link",
+      "repeatable": true
+    },
     "col_2_title": {
       "type": "string"
     },
@@ -33,6 +38,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "col_2_links": {
+      "type": "component",
+      "component": "shared.home-platform-link",
+      "repeatable": true
     }
   },
   "config": {}
