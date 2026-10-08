@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_home_platform_links",
+  "info": {
+    "displayName": "home_platform_link",
+    "description": "Карточка-ссылка в блоке «Бизнесу / Частным лицам» на главной"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
