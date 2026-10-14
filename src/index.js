@@ -1,6 +1,7 @@
 'use strict';
 
 const seedHomePlatformLinks = require('./bootstrap/seed-home-platform-links');
+const { registerBlogPostDates, backfillBlogPostDates } = require('./bootstrap/blog-post-dates');
 
 module.exports = {
   /**
@@ -9,7 +10,9 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register({ strapi }) {
+    registerBlogPostDates(strapi);
+  },
 
   /**
    * An asynchronous bootstrap function that runs before
@@ -20,5 +23,6 @@ module.exports = {
    */
   async bootstrap({ strapi }) {
     await seedHomePlatformLinks(strapi);
+    await backfillBlogPostDates(strapi);
   },
 };
