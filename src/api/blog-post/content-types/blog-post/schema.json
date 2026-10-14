@@ -58,6 +58,11 @@
       "component": "shared.post-questions",
       "repeatable": false
     },
+    "post_sources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.post-source"
+    },
     "seo_cluster": {
       "type": "component",
       "component": "shared.seo",
