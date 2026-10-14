@@ -65,6 +65,9 @@
     "time_read_post": {
       "type": "string",
       "default": "5"
+    },
+    "first_published_at": {
+      "type": "datetime"
     }
   }
 }
