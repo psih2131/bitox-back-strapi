@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_post_sources",
+  "info": {
+    "displayName": "post_source",
+    "description": "Источник в конце статьи: название и ссылка"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
