@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_commercial_buttons",
+  "info": {
+    "displayName": "commercial_button",
+    "description": "Кнопка-ссылка в коммерческом блоке статьи"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
