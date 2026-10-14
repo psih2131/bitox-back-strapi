@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_shared_commercial_blocks",
+  "info": {
+    "displayName": "commercial_block",
+    "description": "Коммерческий блок внутри статьи: заголовок, текст, картинка, кнопки"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "maxLength": 250
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "default": "light",
+      "required": true
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.commercial-button",
+      "max": 3
+    },
+    "show_telegram_button": {
+      "type": "boolean",
+      "default": true
+    },
+    "telegram_button_label": {
+      "type": "string",
+      "default": "Консультация в Telegram"
+    }
+  },
+  "config": {}
+}
