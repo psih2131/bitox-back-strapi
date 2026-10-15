@@ -15,6 +15,9 @@
     "name": {
       "type": "string"
     },
+    "position": {
+      "type": "string"
+    },
     "avatar": {
       "type": "media",
       "multiple": false,
