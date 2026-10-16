@@ -40,6 +40,36 @@
     },
     "referrer": {
       "type": "text"
+    },
+    "calc_type": {
+      "type": "string"
+    },
+    "calc_from_amount": {
+      "type": "decimal"
+    },
+    "calc_from_currency": {
+      "type": "string"
+    },
+    "calc_from_name": {
+      "type": "string"
+    },
+    "calc_to_amount": {
+      "type": "decimal"
+    },
+    "calc_to_currency": {
+      "type": "string"
+    },
+    "calc_to_name": {
+      "type": "string"
+    },
+    "calc_rate": {
+      "type": "decimal"
+    },
+    "calc_country": {
+      "type": "string"
+    },
+    "calc_city": {
+      "type": "string"
     }
   }
 }
