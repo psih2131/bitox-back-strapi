@@ -11,6 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "show_calc_sec": {
+      "type": "boolean",
+      "default": false
+    },
     "title": {
       "type": "string",
       "required": true
