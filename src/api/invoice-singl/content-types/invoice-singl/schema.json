@@ -16,6 +16,10 @@
       "component": "shared.service-hero",
       "repeatable": false
     },
+    "show_calc_sec": {
+      "type": "boolean",
+      "default": false
+    },
     "services_invoice_sec": {
       "type": "component",
       "component": "shared.invoice-sec",
