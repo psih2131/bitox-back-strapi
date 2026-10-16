@@ -9,20 +9,25 @@ const UID = 'api::blog-post.blog-post';
 const TABLE = 'blog_posts';
 
 async function ensureFirstPublished(strapi, documentId) {
-  const knex = strapi.db.connection;
-  const rows = await knex(TABLE)
-    .where({ document_id: documentId })
-    .select('id', 'published_at', 'first_published_at');
+  // strapi.db.query работает внутри текущей транзакции админки.
+  // Прямой запрос в базу мимо неё ждал бы, пока транзакция закончится, а она ждала его — сохранение зависало.
+  const query = strapi.db.query(UID);
+  const rows = await query.findMany({
+    where: { documentId },
+    select: ['id', 'publishedAt', 'first_published_at'],
+  });
 
-  const published = rows.find((row) => row.published_at);
+  const published = rows.find((row) => row.publishedAt);
   if (!published) return;
 
-  const value = rows.map((row) => row.first_published_at).find(Boolean) || published.published_at;
+  const value = rows.map((row) => row.first_published_at).find(Boolean) || published.publishedAt;
   const ids = rows.filter((row) => !row.first_published_at).map((row) => row.id);
 
-  // Пишем напрямую в таблицу, чтобы не сдвигать updatedAt статьи
   if (ids.length) {
-    await knex(TABLE).whereIn('id', ids).update({ first_published_at: value });
+    await query.updateMany({
+      where: { id: { $in: ids } },
+      data: { first_published_at: value },
+    });
   }
 }
 
