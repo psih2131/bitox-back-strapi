@@ -11,6 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "show_calc_sec": {
+      "type": "boolean",
+      "default": false
+    },
     "service_hero_sec": {
       "type": "component",
       "component": "shared.service-hero",
