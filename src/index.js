@@ -2,6 +2,7 @@
 
 const seedHomePlatformLinks = require('./bootstrap/seed-home-platform-links');
 const { registerBlogPostDates, backfillBlogPostDates } = require('./bootstrap/blog-post-dates');
+const importBankCorrespondentArticle = require('./bootstrap/import-bank-correspondent-article');
 
 module.exports = {
   /**
@@ -24,5 +25,6 @@ module.exports = {
   async bootstrap({ strapi }) {
     await seedHomePlatformLinks(strapi);
     await backfillBlogPostDates(strapi);
+    await importBankCorrespondentArticle(strapi);
   },
 };
