@@ -11,8 +11,7 @@
       "unique": false
     },
     "section_title_for_nav_post_menu": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "quote_text_element": {
       "type": "text"
