@@ -11,6 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "show_calc_sec": {
+      "type": "boolean",
+      "default": false
+    },
     "exchange_hero_sec": {
       "type": "component",
       "component": "shared.exchange-hero-sec",
