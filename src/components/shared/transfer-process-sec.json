@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_transfer_process_secs",
+  "info": {
+    "displayName": "transfer-process-sec",
+    "description": "Блок «Как перевести деньги в …» на странице страны. Если шаги не заполнены — общие шаги из _process_transfer_component. Метки: {{куда}}, {{где}}, {{откуда}}"
+  },
+  "options": {},
+  "attributes": {
+    "section_title": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "component",
+      "component": "section-items.transfer-stap",
+      "repeatable": true
+    },
+    "button_text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
