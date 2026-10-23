@@ -114,6 +114,11 @@
       "component": "shared.transfer-features-sec",
       "repeatable": false
     },
+    "transfer_process_sec": {
+      "type": "component",
+      "component": "shared.transfer-process-sec",
+      "repeatable": false
+    },
     "transfers_pages_region": {
       "type": "relation",
       "relation": "manyToOne",
