@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_transfer_features_secs",
+  "info": {
+    "displayName": "transfer-features-sec",
+    "description": "Блок «Быстрые международные переводы в …» на странице страны. Пустые поля — общий текст. Метки: {{куда}}, {{где}}, {{откуда}}"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "banks": {
+      "type": "text"
+    },
+    "banks_text": {
+      "type": "string"
+    },
+    "wallet_text": {
+      "type": "string"
+    },
+    "amounts": {
+      "type": "text"
+    },
+    "payments_text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
