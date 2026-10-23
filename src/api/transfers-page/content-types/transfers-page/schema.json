@@ -109,6 +109,12 @@
       "component": "section-items.city-item",
       "repeatable": true
     },
+    "features_banks": {
+      "type": "text"
+    },
+    "features_text": {
+      "type": "string"
+    },
     "transfers_pages_region": {
       "type": "relation",
       "relation": "manyToOne",
