@@ -27,6 +27,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "legal_info": {
+      "type": "text"
     }
   }
 }
