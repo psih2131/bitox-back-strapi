@@ -109,11 +109,10 @@
       "component": "section-items.city-item",
       "repeatable": true
     },
-    "features_banks": {
-      "type": "text"
-    },
-    "features_text": {
-      "type": "string"
+    "transfer_features_sec": {
+      "type": "component",
+      "component": "shared.transfer-features-sec",
+      "repeatable": false
     },
     "transfers_pages_region": {
       "type": "relation",
